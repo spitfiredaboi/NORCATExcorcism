@@ -12,11 +12,7 @@ public class EnemyPhysical : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //playerDetector = gameObject.transform.Find("playerDetector").transform;
-        playerHits[0] = Physics2D.Raycast(playerDetectors[0].position, Vector2.right, detectorRange);
-        playerHits[1] = Physics2D.Raycast(playerDetectors[1].position, Vector2.left, detectorRange);
-        playerHits[2] = Physics2D.Raycast(playerDetectors[2].position, Vector2.up, detectorRange);
-        playerHits[3] = Physics2D.Raycast(playerDetectors[3].position, Vector2.down, detectorRange);
+        
     }
 
     // Update is called once per frame
