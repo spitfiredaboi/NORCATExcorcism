@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public float horizontalInput;
     public float speed = 5;
     public GameObject melee;
+    public float meleeSpeed;
+    public bool isAttacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,7 @@ public class Player : MonoBehaviour
         //Attack
 
 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && isAttacking == false)
         {
            StartCoroutine(Attack());
         }
@@ -41,10 +43,12 @@ public class Player : MonoBehaviour
 
     IEnumerator Attack()
     {
-        melee.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        melee.SetActive(false);
-        Debug.Log("It's workin");
+            isAttacking = true;
+            melee.SetActive(true);
+            yield return new WaitForSeconds(meleeSpeed);
+            melee.SetActive(false);
+            Debug.Log("It's workin");
+            isAttacking = false;
     }
 
 }
