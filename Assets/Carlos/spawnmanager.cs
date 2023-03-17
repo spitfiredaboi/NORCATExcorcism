@@ -24,7 +24,7 @@ public class spawnmanager : MonoBehaviour
         //1.) Pick a random enemy
         Instantiate(enemyPrefabs[enemyindex], new Vector2(0, 0), enemyPrefabs[enemyindex].transform.rotation);
         //2.) Pick a random spawn point
-         enemyindex =
+        // enemyindex =
         //3.) Spawn that enemy at that spawn point
     }
 }
