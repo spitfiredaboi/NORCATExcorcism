@@ -7,25 +7,29 @@ public class spawnmanager : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public Transform[] spawnpoints;
     public int enemyindex;
+    public float spawnTime = 5f;
+    public float spawnDelay = 3f;
     // Start is called before the first frame update
     void Start()
     {
         //4.) InvokeRepeating to keep spawning
+        InvokeRepeating("SpawnEnemy", spawnDelay, spawnTime);
     }
-
     // Update is called once per frame
     void Update()
     {
       
     }
-    public void Spawn()
+    public void SpawnEnemy()
     {
         int enemyindex = Random.Range(0, enemyPrefabs.Length);
         //1.) Pick a random enemy
-        Instantiate(enemyPrefabs[enemyindex], new Vector2(0, 0), enemyPrefabs[enemyindex].transform.rotation);
+        
         //2.) Pick a random spawn point
-         enemyindex =
+        int spawnpoint = Random.Range(0, spawnpoints.Length);
         //3.) Spawn that enemy at that spawn point
+
+        Instantiate(enemyPrefabs[enemyindex], spawnpoints[spawnpoint].position, spawnpoints[spawnpoint].rotation);
     }
 }
 
