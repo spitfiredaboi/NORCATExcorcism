@@ -26,7 +26,9 @@ public class spawnmanager : MonoBehaviour
         //1.) Pick a random enemy
         
         //2.) Pick a random spawn point
+
         int spawnpoint = Random.Range(0, spawnpoints.Length);
+
         //3.) Spawn that enemy at that spawn point
 
         Instantiate(enemyPrefabs[enemyindex], spawnpoints[spawnpoint].position, spawnpoints[spawnpoint].rotation);
