@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 328d50d702a03874ab86dd4b04581d8d
+guid: 0bbd055a1e800324bb6226f13f2104d9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door closed a_0
+      name: door closed a 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 402
-        height: 540
+        y: 2700
+        width: 2010
+        height: 2700
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +142,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a32e8557662dcdb4eb6bb7645b6ffaa0
-      internalID: -1005798585
+      spriteID: 6f3c20652899c0a46aed989c77a74832
+      internalID: -910832875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door closed a 1_1
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 2700
+        width: 2010
+        height: 2700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518d750b31e7e674b91b733f68d878d4
+      internalID: 356123147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door closed a 1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2010
+        height: 2700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4128ce39a53eddd4a89155f13eb44611
+      internalID: 2052271167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door closed a 1_3
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 0
+        width: 2010
+        height: 2700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7e327ffc7964f45a6036049a04b6fe
+      internalID: -241415174
       vertices: []
       indices: 
       edges: []
@@ -159,7 +222,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      door closed a_0: -1005798585
+      door closed a 1_1: 356123147
+      door closed a 1_2: 2052271167
+      door closed a 1_0: -910832875
+      door closed a 1_3: -241415174
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
