@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 328d50d702a03874ab86dd4b04581d8d
+guid: f44d3b2b85a5ccb4dac6810c5909ef57
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door closed a_0
+      name: door_+_shadow_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 402
-        height: 540
+        width: 339
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +142,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a32e8557662dcdb4eb6bb7645b6ffaa0
-      internalID: -1005798585
+      spriteID: be47ce2451a788643b70c6d7cf13545a
+      internalID: -1261112847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_+_shadow_1
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 0
+        width: 339
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de26352d53687054fb5889a8fa073f2f
+      internalID: 1166362296
       vertices: []
       indices: 
       edges: []
@@ -159,7 +180,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      door closed a_0: -1005798585
+      door_+_shadow_0: -1261112847
+      door_+_shadow_1: 1166362296
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
