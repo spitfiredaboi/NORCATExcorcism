@@ -7,7 +7,7 @@ TagManager:
   - Lucy
   - Gavin
   - Door
-
+  - light
   layers:
   - Default
   - TransparentFX
