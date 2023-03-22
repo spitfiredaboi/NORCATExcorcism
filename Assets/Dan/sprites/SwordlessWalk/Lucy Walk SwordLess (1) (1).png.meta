@@ -131,10 +131,10 @@ TextureImporter:
       name: Lucy Walk SwordLess (1) (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2100
-        width: 1050
-        height: 1050
+        x: 453
+        y: 2427
+        width: 158
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Lucy Walk SwordLess (1) (1)_1
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 2100
-        width: 1050
-        height: 1050
+        x: 1518
+        y: 2427
+        width: 143
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: Lucy Walk SwordLess (1) (1)_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1050
-        width: 1050
-        height: 1050
+        x: 390
+        y: 1384
+        width: 249
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: Lucy Walk SwordLess (1) (1)_3
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 1050
-        width: 1050
-        height: 1050
+        x: 1518
+        y: 1377
+        width: 143
+        height: 403
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: Lucy Walk SwordLess (1) (1)_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1050
-        height: 1050
+        x: 432
+        y: 335
+        width: 207
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Lucy Walk SwordLess (1) (1)_5
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 0
-        width: 1050
-        height: 1050
+        x: 1482
+        y: 335
+        width: 206
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cddedf4db1878c4f99f7627a5032397
+      spriteID: 5adf2c3452ac19146a12acf658198e91
       internalID: 596892116
       vertices: []
       indices: 
