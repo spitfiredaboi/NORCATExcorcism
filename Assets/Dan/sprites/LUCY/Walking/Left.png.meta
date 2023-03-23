@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a82eb4e882ff953499d272271c7e08dd
+guid: e3c9e8d3064d68c4eaa6d4c24c0b00c7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lucy Walk SwordLess (1) (1)_0
+      name: Lucy Walk SwordLess Left (1)_0
       rect:
         serializedVersion: 2
-        x: 453
-        y: 2427
-        width: 158
-        height: 402
+        x: 0
+        y: 3584
+        width: 1792
+        height: 1792
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ee829f60e5db7446a0e688b03eda11c
-      internalID: 73780123
+      spriteID: 40ae320ece4540c4c9c84e143f71708e
+      internalID: -1719275801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucy Walk SwordLess (1) (1)_1
+      name: Lucy Walk SwordLess Left (1)_1
       rect:
         serializedVersion: 2
-        x: 1518
-        y: 2427
-        width: 143
-        height: 402
+        x: 1792
+        y: 3584
+        width: 1792
+        height: 1792
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cd23a5e3b821854793d0510968ace81
-      internalID: 1378321132
+      spriteID: 1ab73140001a74a46ac9b0576f5c7489
+      internalID: -1898176939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucy Walk SwordLess (1) (1)_2
+      name: Lucy Walk SwordLess Left (1)_2
       rect:
         serializedVersion: 2
-        x: 390
-        y: 1384
-        width: 249
-        height: 396
+        x: 0
+        y: 1792
+        width: 1792
+        height: 1792
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d735227f68bab749a1c882993ffb41c
-      internalID: 1873488177
+      spriteID: 51881a9c3568bf74a981c9ebea812893
+      internalID: 1547668974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucy Walk SwordLess (1) (1)_3
+      name: Lucy Walk SwordLess Left (1)_3
       rect:
         serializedVersion: 2
-        x: 1518
-        y: 1377
-        width: 143
-        height: 403
+        x: 1792
+        y: 1792
+        width: 1792
+        height: 1792
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0ce7e1d93c66724aa4dc3bb10ac16e7
-      internalID: -806477360
+      spriteID: cbfeae302b6c11c4799551fa228f0524
+      internalID: 1335267167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucy Walk SwordLess (1) (1)_4
+      name: Lucy Walk SwordLess Left (1)_4
       rect:
         serializedVersion: 2
-        x: 432
-        y: 335
-        width: 207
-        height: 395
+        x: 0
+        y: 0
+        width: 1792
+        height: 1792
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caf8019d0019b0e41b7cef8ad9226b57
-      internalID: -1040915452
+      spriteID: 1d4d85b9439f347408a22c3709c81e31
+      internalID: -1536527871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucy Walk SwordLess (1) (1)_5
+      name: Lucy Walk SwordLess Left (1)_5
       rect:
         serializedVersion: 2
-        x: 1482
-        y: 335
-        width: 206
-        height: 395
+        x: 1792
+        y: 0
+        width: 1792
+        height: 1792
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5adf2c3452ac19146a12acf658198e91
-      internalID: 596892116
+      spriteID: 913636a48651c2f4c9923b180c60a501
+      internalID: 221754769
       vertices: []
       indices: 
       edges: []
@@ -264,12 +264,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lucy Walk SwordLess (1) (1)_3: -806477360
-      Lucy Walk SwordLess (1) (1)_1: 1378321132
-      Lucy Walk SwordLess (1) (1)_2: 1873488177
-      Lucy Walk SwordLess (1) (1)_4: -1040915452
-      Lucy Walk SwordLess (1) (1)_5: 596892116
-      Lucy Walk SwordLess (1) (1)_0: 73780123
+      Lucy Walk SwordLess Left (1)_5: 221754769
+      Lucy Walk SwordLess Left (1)_0: -1719275801
+      Lucy Walk SwordLess Left (1)_1: -1898176939
+      Lucy Walk SwordLess Left (1)_4: -1536527871
+      Lucy Walk SwordLess Left (1)_3: 1335267167
+      Lucy Walk SwordLess Left (1)_2: 1547668974
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

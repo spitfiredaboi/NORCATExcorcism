@@ -26,15 +26,14 @@ public class Player : MonoBehaviour
         if (isPlayer1)
         {
             melee = gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
-            meleeSpeed = 3;
+            meleeSpeed = 0.5f;
             ranged = null;
             rangedSpeed = 0;
         }
-        else if (isPlayer1!)
+        else if (isPlayer1 == false)
         {
             melee = null;
             meleeSpeed = 0;
-
             rangedSpeed = 1;
         }
     }
@@ -70,7 +69,7 @@ public class Player : MonoBehaviour
             Debug.Log("It's workin");
             isAttacking = false;
         }
-        else if (isPlayer1!)
+        else if (isPlayer1 == false)
         {
             isAttacking = true;
             Instantiate(ranged, rangedWeapon.transform.position, rangedWeapon.transform.rotation);
