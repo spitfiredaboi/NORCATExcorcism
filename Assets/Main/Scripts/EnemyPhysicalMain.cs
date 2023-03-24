@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPhysical : MonoBehaviour
+public class EnemyPhysicalMain : MonoBehaviour
 {
     public float speed = 2;
     public float detectorRange;
@@ -98,13 +98,6 @@ public class EnemyPhysical : MonoBehaviour
                 */
 
             }
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("LucyWeapon"))
-        {
-            Destroy(gameObject);
         }
     }
 }
