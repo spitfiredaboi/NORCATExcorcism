@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/************************************************************************************************
+ * first you wanna load that bad boy up with with enemy sprites
+ * make sure they have  the raycast script
+ * 
+ * 
+ * 
+ * 
+ * 
+ * ***********************************************************************************************/
 public class spawnmanager : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
@@ -26,9 +35,7 @@ public class spawnmanager : MonoBehaviour
         //1.) Pick a random enemy
         
         //2.) Pick a random spawn point
-
         int spawnpoint = Random.Range(0, spawnpoints.Length);
-
         //3.) Spawn that enemy at that spawn point
 
         Instantiate(enemyPrefabs[enemyindex], spawnpoints[spawnpoint].position, spawnpoints[spawnpoint].rotation);

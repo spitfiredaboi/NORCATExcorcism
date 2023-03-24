@@ -34,7 +34,7 @@ public class EnemyPhysical : MonoBehaviour
         {
             if (ray.collider != null)
             {
-                if (ray.collider.gameObject.CompareTag("Player"))
+                if (ray.collider.gameObject.CompareTag("Lucy"))
                 {
                     Debug.Log("Gottem");
 
@@ -98,6 +98,13 @@ public class EnemyPhysical : MonoBehaviour
                 */
 
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("LucyWeapon"))
+        {
+            Destroy(gameObject);
         }
     }
 }
