@@ -8,6 +8,7 @@ TagManager:
   - Gavin
   - Door
   - light
+  - crate
   layers:
   - Default
   - TransparentFX

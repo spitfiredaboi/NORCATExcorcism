@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ffd10d48ccc1233418ab2822c9128fca
+guid: 692e3bcb1dfe8ff4a91f17d3110505ac
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: switch_0
+      name: pressure plate_0
       rect:
         serializedVersion: 2
         x: 0
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef39a1a59f935e14780aa1ec78988448
-      internalID: -2112348413
+      spriteID: d8420bba89a39fb42bd072b37784d400
+      internalID: 1573068020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: switch_1
+      name: pressure plate_1
       rect:
         serializedVersion: 2
         x: 0
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7a30196d7daa3740a534225bff9e667
-      internalID: 90864828
+      spriteID: ac28df8f32cec3645bed8098c402b53d
+      internalID: 1872714164
       vertices: []
       indices: 
       edges: []
@@ -180,8 +180,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      switch_0: -2112348413
-      switch_1: 90864828
+      pressure plate_0: 1573068020
+      pressure plate_1: 1872714164
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
