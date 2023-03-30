@@ -137,7 +137,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5054115536053225911, guid: b7f289113cd9f43498ed56d27b56fd0a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5054115536053225911, guid: b7f289113cd9f43498ed56d27b56fd0a, type: 3}
       propertyPath: m_LocalScale.x
@@ -738,7 +738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3012712426644613934, guid: d3d36517ae63b2f419d2b3949c55e494, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3012712426644613934, guid: d3d36517ae63b2f419d2b3949c55e494, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5568,7 +5568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 276427697576069469, guid: 4c4cc6e2a84ef604e89a3e56d9afaad8, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 276427697576069469, guid: 4c4cc6e2a84ef604e89a3e56d9afaad8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6047,7 +6047,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4705819433798137222, guid: 2acc9118e8db5c74293127e07e4a6c8d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4705819433798137222, guid: 2acc9118e8db5c74293127e07e4a6c8d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6194,7 +6194,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.051078796, y: -0.046759486}
+  m_Offset: {x: -0.051078796, y: -0.25530767}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6205,7 +6205,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9921055, y: 5.582494}
+  m_Size: {x: 2.9921055, y: 5.99959}
   m_EdgeRadius: 0
 --- !u!114 &5766407032986994789
 MonoBehaviour:
@@ -6519,7 +6519,7 @@ Transform:
   m_Children:
   - {fileID: 8185402299097009016}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8219099645633938875
 MonoBehaviour:
