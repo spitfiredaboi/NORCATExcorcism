@@ -135,21 +135,24 @@ public class Player : MonoBehaviour
         animator.SetBool("isWalkingUp", up);
 
         //attack in the right direction
-        if((verticalInput == 0 && horizontalInput == 0) || down)
+        if (meleeSlot != null)
         {
-            meleeSlot.transform.eulerAngles = new Vector3(0, 0, 270);
-        }
-        else if(right)
+            if ((verticalInput == 0 && horizontalInput == 0) || down)
+            {
+                meleeSlot.transform.eulerAngles = new Vector3(0, 0, 270);
+            }
+            else if (right)
             {
                 meleeSlot.transform.eulerAngles = new Vector3(0, 0, 0);
             }
-        else if (up)
-        {
-            meleeSlot.transform.eulerAngles = new Vector3(0, 0, 90);
-        }
-        else if (left)
-        {
-            meleeSlot.transform.eulerAngles = new Vector3(0, 0, 180);
+            else if (up)
+            {
+                meleeSlot.transform.eulerAngles = new Vector3(0, 0, 90);
+            }
+            else if (left)
+            {
+                meleeSlot.transform.eulerAngles = new Vector3(0, 0, 180);
+            }
         }
     }
 
