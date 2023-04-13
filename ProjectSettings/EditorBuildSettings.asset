@@ -4,25 +4,6 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-<<<<<<< HEAD
-  - enabled: 1
-    path: Assets/Main/Scenes/LucyTutorial.unity
-=======
-  - enabled: 0
-    path: Assets/Main/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Kyle/scene/LVL1 Tutorial.unity
-    guid: 4ff812a11d4fd634da49505ad031be02
-  - enabled: 0
-    path: Assets/Dan/scenes/LVL1.unity
-    guid: cf38e9c1ca4a42549b36ca9a13dbc740
-  - enabled: 0
-    path: Assets/Main/Scenes/LVL1.unity
->>>>>>> fbcbadf4da002f22351e22c8d83c6b450face5bd
-    guid: 89d6d1fd57237f74992cb377c2764418
-  - enabled: 1
-    path: Assets/Main/Scenes/GavinTutorial.unity
-    guid: 7c1bbd0774bd5a448a481ed520dcfc8a
-  m_configObjects: {}
+  m_Scenes: []
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: af0db89549d5b554e88816d45c23164a, type: 2}
