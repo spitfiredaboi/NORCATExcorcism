@@ -4,13 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Gameover : MonoBehaviour
+public class title : MonoBehaviour
 {
-    public TextMeshProUGUI titletext;
+    public TextMeshProUGUI Gameovertext;
    /* private buttonscript button;*/
     // Start is called before the first frame update
     public void titleScreen()  {
-        titletext.gameObject.SetActive(true);
+        Gameovertext.gameObject.SetActive(true);
     }
     void Start()
     {
