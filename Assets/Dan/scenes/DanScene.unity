@@ -486,7 +486,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
   m_IsActive: 0
+=======
+  m_IsActive: 1
+>>>>>>> Stashed changes
 --- !u!212 &1649483138
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -528,12 +532,20 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: 74d91c5a06f93a9468b50152176b4d83, type: 3}
+=======
+  m_Sprite: {fileID: 2009025239, guid: 1c55fb67bab6c0b4ea4f4367a0a6d4b4, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
+<<<<<<< Updated upstream
   m_Size: {x: 17.92, y: 17.92}
+=======
+  m_Size: {x: 10.8, y: 10.802638}
+>>>>>>> Stashed changes
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -571,12 +583,17 @@ MonoBehaviour:
   horizontalInput: 0
   speed: 5
   melee: {fileID: 0}
+<<<<<<< Updated upstream
   ranged: {fileID: 0}
   rangedWeapon: {fileID: 0}
   meleeSpeed: 0.5
   rangedSpeed: 0
   isAttacking: 0
   isPlayer1: 1
+=======
+  meleeSpeed: 0.5
+  isAttacking: 0
+>>>>>>> Stashed changes
 --- !u!95 &1649483141
 Animator:
   serializedVersion: 4
@@ -597,6 +614,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< Updated upstream
 --- !u!1 &1888734159
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,3 +754,5 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes

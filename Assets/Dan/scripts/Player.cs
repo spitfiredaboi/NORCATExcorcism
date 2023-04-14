@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+<<<<<<< Updated upstream
     //walking variables
     public float verticalInput;
     public float horizontalInput;
@@ -35,12 +36,30 @@ public class Player : MonoBehaviour
     void Start()
     {
         //player identity
+=======
+
+    public float verticalInput;
+    public float horizontalInput;
+    public float speed = 5;
+    public GameObject melee;
+    public GameObject ranged;
+    public GameObject rangedWeapon;
+    public float meleeSpeed;
+    public float rangedSpeed;
+    public bool isAttacking = false;
+    public bool isPlayer1 = true;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+>>>>>>> Stashed changes
         if (gameObject.CompareTag("Gavin"))
         {
             isPlayer1 = false;
         }
         if (isPlayer1)
         {
+<<<<<<< Updated upstream
             meleeSlot = gameObject.transform.GetChild(0).gameObject;
             melee = meleeSlot.transform.GetChild(0).gameObject;
             meleeSpeed = 0.5f;
@@ -58,6 +77,20 @@ public class Player : MonoBehaviour
         //components
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+=======
+            melee = gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+            meleeSpeed = 3;
+            ranged = null;
+            rangedSpeed = 0;
+        }
+        else if (isPlayer1!)
+        {
+            melee = null;
+            meleeSpeed = 0;
+
+            rangedSpeed = 1;
+        }
+>>>>>>> Stashed changes
     }
     // Update is called once per frame
     void Update()
@@ -78,6 +111,7 @@ public class Player : MonoBehaviour
         {
            StartCoroutine(Attack());
         }
+<<<<<<< Updated upstream
 
         //movement detection
         //detect horizontal movement
@@ -151,6 +185,8 @@ public class Player : MonoBehaviour
         {
             meleeSlot.transform.eulerAngles = new Vector3(0, 0, 180);
         }
+=======
+>>>>>>> Stashed changes
     }
 
     IEnumerator Attack()
@@ -164,10 +200,17 @@ public class Player : MonoBehaviour
             Debug.Log("It's workin");
             isAttacking = false;
         }
+<<<<<<< Updated upstream
         else if (isPlayer1 == false)
         {
             isAttacking = true;
             Instantiate(ranged, rangedSlot.transform.position, rangedSlot.transform.rotation);
+=======
+        else if (isPlayer1!)
+        {
+            isAttacking = true;
+            Instantiate(ranged, rangedWeapon.transform.position, rangedWeapon.transform.rotation);
+>>>>>>> Stashed changes
             yield return new WaitForSeconds(rangedSpeed);
             isAttacking = false;
         }

@@ -34,7 +34,11 @@ public class EnemyPhysical : MonoBehaviour
         {
             if (ray.collider != null)
             {
+<<<<<<< Updated upstream
                 if (ray.collider.gameObject.CompareTag("Lucy"))
+=======
+                if (ray.collider.gameObject.CompareTag("Player"))
+>>>>>>> Stashed changes
                 {
                     Debug.Log("Gottem");
 
@@ -100,6 +104,7 @@ public class EnemyPhysical : MonoBehaviour
             }
         }
     }
+<<<<<<< Updated upstream
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("LucyWeapon"))
@@ -107,4 +112,6 @@ public class EnemyPhysical : MonoBehaviour
             Destroy(gameObject);
         }
     }
+=======
+>>>>>>> Stashed changes
 }
