@@ -3,25 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class settingsmenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     Resolution[] resolutions;
-    public Dropdown resolutionDropdown;
+    public TMPro.TMP_Dropdown resolutionDropdown;
     private void Start()
     {
         int currentResolutionIndex = 0;
         resolutions = Screen.resolutions;
+        Debug.Log(resolutions.ToString());
+     
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
+
+        /*
+         * Adding Options for placeholders
+         * 
+         */
+
+        options.Add("Carlos");
+        options.Add("Kyle");
+
+
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
             for(int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + "x" + resolutions[i].width;
-            options.Add(option);
+            string Options = resolutions[i].width + " x " + resolutions[i].height + " @ " + resolutions[i].refreshRate + "hz";
+            options.Add(Options);
             if (resolutions[i].width == Screen.currentResolution.width && 
                 resolutions[i].height == Screen.currentResolution.height)
             {
