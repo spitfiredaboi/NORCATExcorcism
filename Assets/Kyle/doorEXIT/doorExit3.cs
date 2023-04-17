@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorEXIT : MonoBehaviour
+public class doorExit3 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,10 +18,9 @@ public class DoorEXIT : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Lucy"))
+        if (collision.gameObject.CompareTag("Gavin"))
         {
-            SceneManager.LoadScene("Level 2");
-            Debug.Log("working");
+            SceneManager.LoadScene("Heaven 2");
         }
     }
 }
