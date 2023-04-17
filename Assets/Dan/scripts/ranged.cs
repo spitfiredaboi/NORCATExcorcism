@@ -11,6 +11,7 @@ public class ranged : MonoBehaviour
     void Start()
     {
         StartCoroutine(SelfDestroy());
+        gameObject.transform.parent = null;
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class ranged : MonoBehaviour
 
     public IEnumerator SelfDestroy()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
 }

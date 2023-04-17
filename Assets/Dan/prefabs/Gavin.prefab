@@ -285,10 +285,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  melee: {fileID: 0}
-  meleeSlot: {fileID: 0}
-  meleeSpeed: 0
+  weaponSlot: {fileID: 0}
+  weapon: {fileID: 4330329926229784161, guid: 60634f6f87bfca0458c7b686ee925cac, type: 3}
   isAttacking: 0
+  AttackDelay: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
   down: 0

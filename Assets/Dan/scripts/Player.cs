@@ -147,12 +147,10 @@ public class Player : MonoBehaviour
     {
         if (isAttacking && !AttackDelay)
         {
-            Debug.Log("yay");
             AttackDelay = true;
             melee.SetActive(true);
             yield return new WaitForSeconds(meleeSpeed);
             melee.SetActive(false);
-            Debug.Log("It's workin");
             AttackDelay = false;
         }
         yield return new WaitForSeconds(0);

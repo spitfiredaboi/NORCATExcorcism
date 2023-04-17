@@ -14,10 +14,11 @@ public class Player2 : MonoBehaviour
     private CharacterController controller;
 
     //weapon variables
-    public GameObject melee;
-    public GameObject meleeSlot;
-    public float meleeSpeed;
+    public GameObject weaponSlot;
+    public GameObject weapon;
+    public float weaponSpeed = 2;
     public bool isAttacking = false;
+    public bool AttackDelay = false;
 
     //components
     public Animator animator;
@@ -49,6 +50,9 @@ public class Player2 : MonoBehaviour
         cam.AddMember(gameObject.transform, 1f, 0f);
         cam.AddMember(leftCamFix.transform, 1f, 0f);
         cam.AddMember(rightCamFix.transform, 1f, 0f);
+
+        //weapon
+        weaponSlot = GameObject.Find("weaponSlot");
     }
 
 
@@ -56,6 +60,13 @@ public class Player2 : MonoBehaviour
     {
         movementInput = context.ReadValue<Vector2>();
         Debug.Log(movementInput);
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        Debug.Log("Attack");
+        isAttacking = context.action.triggered;
+        StartCoroutine(Attacking());
     }
 
     // Update is called once per frame
@@ -68,7 +79,7 @@ public class Player2 : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Z) && isAttacking == false)
             {
-                StartCoroutine(Attack());
+                StartCoroutine(Attacking());
             }
 
             //movement detection
@@ -127,34 +138,36 @@ public class Player2 : MonoBehaviour
             animator.SetBool("isWalkingRight", right);
             animator.SetBool("isWalkingUp", up);
         //attack in the right direction
-            if (meleeSlot != null)
+            if (weaponSlot != null)
             {
                 if ((movementInput.y == 0 && movementInput.x == 0) || down)
                 {
-                    meleeSlot.transform.eulerAngles = new Vector3(0, 0, 270);
+                    weaponSlot.transform.eulerAngles = new Vector3(0, 0, 270);
                 }
                 else if (right)
                 {
-                    meleeSlot.transform.eulerAngles = new Vector3(0, 0, 0);
+                    weaponSlot.transform.eulerAngles = new Vector3(0, 0, 0);
                 }
                 else if (up)
                 {
-                    meleeSlot.transform.eulerAngles = new Vector3(0, 0, 90);
+                    weaponSlot.transform.eulerAngles = new Vector3(0, 0, 90);
                 }
                 else if (left)
                 {
-                    meleeSlot.transform.eulerAngles = new Vector3(0, 0, 180);
+                    weaponSlot.transform.eulerAngles = new Vector3(0, 0, 180);
                 }
             }
         }
 
-        IEnumerator Attack()
+    IEnumerator Attacking()
+    {
+        if (isAttacking && !AttackDelay)
         {
-            isAttacking = true;
-            melee.SetActive(true);
-            yield return new WaitForSeconds(meleeSpeed);
-            melee.SetActive(false);
-            Debug.Log("It's workin");
-            isAttacking = false;
+            AttackDelay = true;
+            Instantiate(weapon, weaponSlot.transform);
+            yield return new WaitForSeconds(weaponSpeed);
+            AttackDelay = false;
         }
+        yield return new WaitForSeconds(0);
+    } 
     }
