@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public class Player2 : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class Player2 : MonoBehaviour
     public bool left;
     public bool right;
 
+    //cam fix
+    public CinemachineTargetGroup cam;
+    public GameObject leftCamFix;
+    public GameObject rightCamFix;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +42,18 @@ public class Player2 : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         controller = gameObject.GetComponent<CharacterController>();
+
+        cam = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
+        leftCamFix = GameObject.Find("LeftLimit");
+        rightCamFix = GameObject.Find("RightLimit");
+        cam.AddMember(gameObject.transform, 1f, 0f);
+        cam.AddMember(leftCamFix.transform, 1f, 0f);
+        cam.AddMember(rightCamFix.transform, 1f, 0f);
     }
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
-
         movementInput = context.ReadValue<Vector2>();
         Debug.Log(movementInput);
     }
@@ -112,7 +125,8 @@ public class Player2 : MonoBehaviour
             animator.SetBool("isWalkingDown", down);
             animator.SetBool("isWalkingLeft", left);
             animator.SetBool("isWalkingRight", right);
-            animator.SetBool("isWalkingUp", up);    //attack in the right direction
+            animator.SetBool("isWalkingUp", up);
+        //attack in the right direction
             if (meleeSlot != null)
             {
                 if ((movementInput.y == 0 && movementInput.x == 0) || down)

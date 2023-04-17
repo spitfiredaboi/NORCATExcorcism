@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "61db65ca-b1d4-4543-bd72-329fa508cb5b",
                     "expectedControlType": "Button",
@@ -27,12 +27,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "1d49cdbc-a819-40b8-a7ae-9a5ce0797e68",
-                    "path": "",
+                    "id": "468dcf5d-4c98-4d37-9cf2-d1991b24ccc2",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Jump",
+                    "groups": "Controller",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

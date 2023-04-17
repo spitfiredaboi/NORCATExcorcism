@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public GameObject meleeSlot;
     public float meleeSpeed;
     public bool isAttacking = false;
+    public bool AttackDelay = false;
 
     //components
     public Animator animator;
@@ -49,6 +50,13 @@ public class Player : MonoBehaviour
         movementInput = context.ReadValue<Vector2>();
         Debug.Log(movementInput);
     }
+    
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        Debug.Log("Attack");
+        isAttacking = context.action.triggered;
+        StartCoroutine(Attacking());
+    }
 
     // Update is called once per frame
     void Update()
@@ -56,12 +64,6 @@ public class Player : MonoBehaviour
         //movement
         Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         controller.Move(movementInput * Time.deltaTime * speed);
-  
-
-        if (Input.GetKeyDown(KeyCode.Z) && isAttacking == false)
-        {
-           StartCoroutine(Attack());
-        }
 
         //movement detection
         //detect horizontal movement
@@ -141,14 +143,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator Attack()
+    IEnumerator Attacking()
     {
-            isAttacking = true;
+        if (isAttacking && !AttackDelay)
+        {
+            Debug.Log("yay");
+            AttackDelay = true;
             melee.SetActive(true);
             yield return new WaitForSeconds(meleeSpeed);
             melee.SetActive(false);
             Debug.Log("It's workin");
-            isAttacking = false;
+            AttackDelay = false;
+        }
+        yield return new WaitForSeconds(0);
     }
 
 }
