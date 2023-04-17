@@ -8,6 +8,8 @@ TagManager:
   - Gavin
   - Door
   - light
+  - LucyWeapon
+
   - crate
   layers:
   - Default
