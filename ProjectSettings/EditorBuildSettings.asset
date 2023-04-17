@@ -4,6 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+
   m_Scenes:
 
   - enabled: 0
@@ -27,3 +28,4 @@ EditorBuildSettings:
     guid: fe06da155626b5d41978de1f9c8eebfb
 
   m_configObjects: {}
+
