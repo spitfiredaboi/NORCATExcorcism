@@ -9,8 +9,8 @@ TagManager:
   - Door
   - light
   - LucyWeapon
-
-  - crate
+  - LucyEnemy
+  - GavinEnemy
   layers:
   - Default
   - TransparentFX

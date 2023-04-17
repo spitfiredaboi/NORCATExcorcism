@@ -272,6 +272,7 @@ MonoBehaviour:
   meleeSlot: {fileID: 0}
   meleeSpeed: 0.5
   isAttacking: 0
+  AttackDelay: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
   down: 0
@@ -358,7 +359,19 @@ MonoBehaviour:
     m_ActionId: 86eed424-5380-4505-8c81-d1aa107bc4f4
     m_ActionName: Player/Movement[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6083959624432509652}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 61db65ca-b1d4-4543-bd72-329fa508cb5b
     m_ActionName: Player/Jump
   m_NeverAutoSwitchControlSchemes: 1

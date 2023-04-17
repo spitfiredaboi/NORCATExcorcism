@@ -245,7 +245,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.8709679
+  orthographic size: 2.859442
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -283,34 +283,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1666727614, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666727614, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666727614, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1998704546}
-    - target: {fileID: 1666727614, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666727614, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666727614, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Player, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666727614, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6083959624432509649, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
       propertyPath: m_Name
       value: Lucy
@@ -791,14 +763,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6083959624432509651, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
   m_PrefabInstance: {fileID: 621987844}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1998704546 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6083959624432509652, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
-  m_PrefabInstance: {fileID: 621987844}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d21849c635768c41841e99248b04e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public float speed = 5;
     private Vector2 playerVelocity;
     private Vector2 movementInput = Vector2.zero;
+    private float health = 5;
+    private bool iFrames = false;
 
     //controller
     private CharacterController controller;
@@ -156,4 +158,19 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("LucyEnemy") && !iFrames)
+        {
+            health--;
+            StartCoroutine(InvincibilityFrames());
+        }
+    }
+
+    IEnumerator InvincibilityFrames()
+    {
+        iFrames = true;
+        yield return new WaitForSeconds(1.5f);
+        iFrames = false;
+    }
 }
