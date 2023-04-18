@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a25c9ba494503b948ba6b82e1c4966d7
+guid: 28ada2b534e2c424fb9a5faebe12c84e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lucy Right Swipe_0
+      name: Lucy Left Swipe FIXED_0
       rect:
         serializedVersion: 2
         x: 0
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7052a5c53cd81804a94b4c4cf5887f1a
-      internalID: 2146254437
+      spriteID: 79620805de0944e4ab62be2e6ea353a3
+      internalID: -2134619454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucy Right Swipe_1
+      name: Lucy Left Swipe FIXED_1
       rect:
         serializedVersion: 2
         x: 1050
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47c75e5a2465e64478cf26779facfc70
-      internalID: 490439084
+      spriteID: e44be16de243a9f43a8f9ebeb583f3d0
+      internalID: 1224989508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucy Right Swipe_2
+      name: Lucy Left Swipe FIXED_2
       rect:
         serializedVersion: 2
         x: 0
@@ -184,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 304676f1ece2b2740bed3004df1d6bb7
-      internalID: 231445340
+      spriteID: cc48b4b422ca6554a973c3452630c57e
+      internalID: -1966146130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucy Right Swipe_3
+      name: Lucy Left Swipe FIXED_3
       rect:
         serializedVersion: 2
         x: 1050
@@ -205,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bada666eb5c021341a63d4f311e69862
-      internalID: 2136309776
+      spriteID: e4514cb0cc6b7994a9f2fbee18a691a2
+      internalID: -1697709367
       vertices: []
       indices: 
       edges: []
@@ -222,10 +222,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lucy Right Swipe_2: 231445340
-      Lucy Right Swipe_3: 2136309776
-      Lucy Right Swipe_1: 490439084
-      Lucy Right Swipe_0: 2146254437
+      Lucy Left Swipe FIXED_1: 1224989508
+      Lucy Left Swipe FIXED_2: -1966146130
+      Lucy Left Swipe FIXED_0: -2134619454
+      Lucy Left Swipe FIXED_3: -1697709367
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

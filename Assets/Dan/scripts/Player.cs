@@ -55,9 +55,12 @@ public class Player : MonoBehaviour
     
     public void OnAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("Attack");
-        isAttacking = context.action.triggered;
-        StartCoroutine(Attacking());
+        if (!isAttacking)
+        {
+            Debug.Log("Attack");
+            isAttacking = context.action.triggered;
+            StartCoroutine(Attacking());
+        }
     }
 
     // Update is called once per frame
@@ -122,6 +125,7 @@ public class Player : MonoBehaviour
         animator.SetBool("isWalkingLeft", left);
         animator.SetBool("isWalkingRight", right);
         animator.SetBool("isWalkingUp", up);
+        animator.SetBool("isAttacking", isAttacking);
         
         //attack in the right direction
         if (meleeSlot != null)
@@ -149,11 +153,13 @@ public class Player : MonoBehaviour
     {
         if (isAttacking && !AttackDelay)
         {
+            isAttacking = true;
             AttackDelay = true;
             melee.SetActive(true);
             yield return new WaitForSeconds(meleeSpeed);
             melee.SetActive(false);
             AttackDelay = false;
+            isAttacking = false;
         }
         yield return new WaitForSeconds(0);
     }
