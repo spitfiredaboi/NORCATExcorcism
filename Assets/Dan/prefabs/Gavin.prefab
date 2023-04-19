@@ -104,9 +104,10 @@ GameObject:
   - component: {fileID: 7649149509659759809}
   - component: {fileID: 7649149509659759810}
   - component: {fileID: -1871489987554039058}
-  - component: {fileID: 7884269114429807778}
   - component: {fileID: 1444072153}
   - component: {fileID: 1444072154}
+  - component: {fileID: 1363959154}
+  - component: {fileID: 1363959153}
   m_Layer: 0
   m_Name: Gavin
   m_TagString: Gavin
@@ -204,24 +205,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &7884269114429807778
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7649149509659759812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 3.8
-  m_Radius: 1
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: -0.05, y: 0.4, z: 0}
 --- !u!114 &1444072153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +283,7 @@ MonoBehaviour:
   iFrames: 0
   weaponSlot: {fileID: 7649149509499384320}
   weapon: {fileID: 4330329926229784161, guid: 60634f6f87bfca0458c7b686ee925cac, type: 3}
-  weaponSpeed: 2
+  weaponSpeed: 1
   isAttacking: 0
   AttackDelay: 0
   animator: {fileID: 0}
@@ -312,3 +295,40 @@ MonoBehaviour:
   cam: {fileID: 0}
   leftCamFix: {fileID: 0}
   rightCamFix: {fileID: 0}
+--- !u!50 &1363959154
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649149509659759812}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &1363959153
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649149509659759812}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04958868, y: 0.42150354}
+  m_Size: {x: 1.9524336, y: 3.5888586}
+  m_Direction: 0

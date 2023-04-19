@@ -12,9 +12,6 @@ public class Player2 : MonoBehaviour
     private float health = 3;
     public bool iFrames = false;
 
-    //controller
-    private CharacterController controller;
-
     //weapon variables
     public GameObject weaponSlot;
     public GameObject weapon;
@@ -44,7 +41,6 @@ public class Player2 : MonoBehaviour
         //components
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        controller = gameObject.GetComponent<CharacterController>();
 
         cam = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
         leftCamFix = GameObject.Find("LeftLimit");
@@ -76,7 +72,7 @@ public class Player2 : MonoBehaviour
     {
             //movement
             Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            controller.Move(movementInput * Time.deltaTime * speed);
+            gameObject.transform.Translate(movementInput * Time.deltaTime * speed);
 
 
             if (Input.GetKeyDown(KeyCode.Z) && isAttacking == false)

@@ -122,8 +122,9 @@ GameObject:
   - component: {fileID: 6083959624432509650}
   - component: {fileID: 6083959624432509652}
   - component: {fileID: 6083959624432509653}
-  - component: {fileID: 1666727621}
   - component: {fileID: 1666727614}
+  - component: {fileID: 1998704548}
+  - component: {fileID: 1998704549}
   m_Layer: 0
   m_Name: Lucy
   m_TagString: Lucy
@@ -215,9 +216,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  health: 5
+  iFrames: 0
   melee: {fileID: 0}
   meleeSlot: {fileID: 0}
-  meleeSpeed: 0.5
+  meleeSpeed: 0.67
   isAttacking: 0
   AttackDelay: 0
   animator: {fileID: 0}
@@ -246,24 +249,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &1666727621
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083959624432509649}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 4
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1666727614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +311,43 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!50 &1998704548
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083959624432509649}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &1998704549
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083959624432509649}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019732475, y: -0.05230713}
+  m_Size: {x: 1.5931892, y: 4.207224}
+  m_Direction: 0
 --- !u!1 &6083959624773839718
 GameObject:
   m_ObjectHideFlags: 0

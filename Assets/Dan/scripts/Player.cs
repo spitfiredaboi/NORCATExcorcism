@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))]
+
 public class Player : MonoBehaviour
 {
     public float speed = 5;
@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
         //components
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        controller = gameObject.GetComponent<CharacterController>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -66,7 +65,8 @@ public class Player : MonoBehaviour
     {
         //movement
         Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        controller.Move(movementInput * Time.deltaTime * speed);
+        gameObject.transform.Translate(movementInput * Time.deltaTime * speed);
+        
 
         //movement detection
         //detect horizontal movement
@@ -158,10 +158,10 @@ public class Player : MonoBehaviour
             isAttacking = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("I");
-        if (other.gameObject.CompareTag("LucyEnemy") && !iFrames)
+        if (collision.gameObject.CompareTag("LucyEnemy") && !iFrames)
         {
             health--;
             StartCoroutine(InvincibilityFrames());
