@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
     public float speed = 5;
     private Vector2 playerVelocity;
     private Vector2 movementInput = Vector2.zero;
-    private float health = 5;
-    private bool iFrames = false;
+    public int health = 5;
+    public bool iFrames = false;
 
     //controller
     private CharacterController controller;
@@ -50,15 +50,13 @@ public class Player : MonoBehaviour
     {
         
         movementInput = context.ReadValue<Vector2>();
-        Debug.Log(movementInput);
     }
     
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (!isAttacking)
+        if (!AttackDelay)
         {
             Debug.Log("Attack");
-            isAttacking = context.action.triggered;
             StartCoroutine(Attacking());
         }
     }
@@ -126,7 +124,7 @@ public class Player : MonoBehaviour
         animator.SetBool("isWalkingRight", right);
         animator.SetBool("isWalkingUp", up);
         animator.SetBool("isAttacking", isAttacking);
-        
+
         //attack in the right direction
         if (meleeSlot != null)
         {
@@ -150,9 +148,7 @@ public class Player : MonoBehaviour
     }
 
     IEnumerator Attacking()
-    {
-        if (isAttacking && !AttackDelay)
-        {
+    {     
             isAttacking = true;
             AttackDelay = true;
             melee.SetActive(true);
@@ -160,13 +156,12 @@ public class Player : MonoBehaviour
             melee.SetActive(false);
             AttackDelay = false;
             isAttacking = false;
-        }
-        yield return new WaitForSeconds(0);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.CompareTag("LucyEnemy") && !iFrames)
+        Debug.Log("I");
+        if (other.gameObject.CompareTag("LucyEnemy") && !iFrames)
         {
             health--;
             StartCoroutine(InvincibilityFrames());
