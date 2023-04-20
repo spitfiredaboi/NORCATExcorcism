@@ -9,8 +9,7 @@ TagManager:
   - Door
   - light
   - LucyWeapon
-
-  - crate
+  - cry
   layers:
   - Default
   - TransparentFX
