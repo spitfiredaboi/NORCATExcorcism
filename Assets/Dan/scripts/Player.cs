@@ -1,31 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
-    //walking variables
-    public float verticalInput;
-    public float horizontalInput;
     public float speed = 5;
+    private Vector2 playerVelocity;
+    private Vector2 movementInput = Vector2.zero;
+
+    //controller
+    private CharacterController controller;
 
     //weapon variables
     public GameObject melee;
     public GameObject meleeSlot;
-    public GameObject ranged;
-    public GameObject rangedSlot;
     public float meleeSpeed;
-    public float rangedSpeed;
     public bool isAttacking = false;
-
-    //character identity
-    public bool isPlayer1 = true;
+    public bool AttackDelay = false;
 
     //components
     public Animator animator;
     public Rigidbody2D rb;
 
-    //movement detection
+    //animation
     public bool down;
     public bool up;
     public bool left;
@@ -34,57 +33,44 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player identity
-        if (gameObject.CompareTag("Gavin"))
-        {
-            isPlayer1 = false;
-        }
-        if (isPlayer1)
-        {
+        //melee
             meleeSlot = gameObject.transform.GetChild(0).gameObject;
             melee = meleeSlot.transform.GetChild(0).gameObject;
             meleeSpeed = 0.5f;
-            ranged = null;
-            rangedSpeed = 0;
-        }
-        else if (isPlayer1 == false)
-        {
-            meleeSlot = null;
-            melee = null;
-            meleeSpeed = 0;
-            rangedSpeed = 1;
-        }
 
         //components
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        controller = gameObject.GetComponent<CharacterController>();
     }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        
+        movementInput = context.ReadValue<Vector2>();
+        Debug.Log(movementInput);
+    }
+    
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        Debug.Log("Attack");
+        isAttacking = context.action.triggered;
+        StartCoroutine(Attacking());
+    }
+
     // Update is called once per frame
     void Update()
     {
-
-        //direction
-        verticalInput = Input.GetAxis("Vertical");
-        horizontalInput = Input.GetAxis("Horizontal");
-
         //movement
-        transform.Translate(Vector3.up * verticalInput * speed * Time.deltaTime);
-        transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
-
-        //Attack
-
-
-        if (Input.GetKeyDown(KeyCode.Z) && isAttacking == false)
-        {
-           StartCoroutine(Attack());
-        }
+        Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        controller.Move(movementInput * Time.deltaTime * speed);
 
         //movement detection
         //detect horizontal movement
-        if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
+        if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
         {
             //detect if moving right
-            if (horizontalInput > 0)
+            if (movementInput.x> 0)
             {
                 right = true;
                 left = false;
@@ -101,10 +87,10 @@ public class Player : MonoBehaviour
             }
         }
         //detect vertical movement
-        else if (Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput))
+        else if (Mathf.Abs(movementInput.y) > Mathf.Abs(movementInput.x))
         {
             //detect if moving up
-            if (verticalInput > 0)
+            if (movementInput.y > 0)
             {
                 right = false;
                 left = false;
@@ -120,7 +106,7 @@ public class Player : MonoBehaviour
                 down = true;
             }
         }
-        if (horizontalInput == 0 && verticalInput == 0)
+        if (movementInput.x == 0 && movementInput.y == 0)
         {
             right = false;
             left = false;
@@ -129,49 +115,47 @@ public class Player : MonoBehaviour
         }
 
         //set bools for animator
+     
         animator.SetBool("isWalkingDown", down);
         animator.SetBool("isWalkingLeft", left);
         animator.SetBool("isWalkingRight", right);
         animator.SetBool("isWalkingUp", up);
-
+        
         //attack in the right direction
-        if((verticalInput == 0 && horizontalInput == 0) || down)
+        if (meleeSlot != null)
         {
-            meleeSlot.transform.eulerAngles = new Vector3(0, 0, 270);
-        }
-        else if(right)
+            if ((movementInput.y == 0 && movementInput.x == 0) || down)
+            {
+                meleeSlot.transform.eulerAngles = new Vector3(0, 0, 270);
+            }
+            else if (right)
             {
                 meleeSlot.transform.eulerAngles = new Vector3(0, 0, 0);
             }
-        else if (up)
-        {
-            meleeSlot.transform.eulerAngles = new Vector3(0, 0, 90);
-        }
-        else if (left)
-        {
-            meleeSlot.transform.eulerAngles = new Vector3(0, 0, 180);
+            else if (up)
+            {
+                meleeSlot.transform.eulerAngles = new Vector3(0, 0, 90);
+            }
+            else if (left)
+            {
+                meleeSlot.transform.eulerAngles = new Vector3(0, 0, 180);
+            }
         }
     }
 
-    IEnumerator Attack()
+    IEnumerator Attacking()
     {
-        if (isPlayer1)
+        if (isAttacking && !AttackDelay)
         {
-            isAttacking = true;
+            Debug.Log("yay");
+            AttackDelay = true;
             melee.SetActive(true);
             yield return new WaitForSeconds(meleeSpeed);
             melee.SetActive(false);
             Debug.Log("It's workin");
-            isAttacking = false;
+            AttackDelay = false;
         }
-        else if (isPlayer1 == false)
-        {
-            isAttacking = true;
-            Instantiate(ranged, rangedSlot.transform.position, rangedSlot.transform.rotation);
-            yield return new WaitForSeconds(rangedSpeed);
-            isAttacking = false;
-        }
-        
+        yield return new WaitForSeconds(0);
     }
 
 }

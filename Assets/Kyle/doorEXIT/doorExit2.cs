@@ -18,9 +18,9 @@ public class doorExit2 : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Lucy"))
+        if (CompareTag("Gavin"))
         {
-            SceneManager.LoadScene("Heaven 1");
+            SceneManager.LoadScene("Heaven 2");
         }
     }
 }
