@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class gamemanager : MonoBehaviour
 {
@@ -13,23 +14,18 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+
     }
     public void StartGame()
     {
         isGameActive = true;
         score = 0;
-       /* /StartCoroutine(Spawntarget());
-        UpdateScore(0);*/
-        
+        /* /StartCoroutine(Spawntarget());
+         UpdateScore(0);*/
+
     }
-   /* StartGame()
+    public void LoadNextLevel(int x)
     {
-        titleScreen.Gameobject.setActive(false);*/
+        SceneManager.LoadScene(x);
     }
-    // Update is called once per frame
-   /* void Update()
-    {
-        
-    }
-}*/
+}
