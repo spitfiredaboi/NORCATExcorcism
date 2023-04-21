@@ -40,7 +40,7 @@ public class redEnemy : MonoBehaviour
         lucyLocation = new Vector2(player.transform.position.x, player.transform.position.y);
         location = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
-        if (health <= 0 && !dead)
+        if ((health <= 0 && !dead) || player == null)
         {
             StartCoroutine(Death());
         }

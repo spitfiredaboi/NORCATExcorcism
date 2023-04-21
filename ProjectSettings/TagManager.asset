@@ -11,6 +11,7 @@ TagManager:
   - LucyWeapon
   - LucyEnemy
   - GavinEnemy
+  - GavinWeapon
   layers:
   - Default
   - TransparentFX
