@@ -385,6 +385,11 @@ MonoBehaviour:
   dead: 0
   animator: {fileID: 0}
   detectorRange: 125
+  rb: {fileID: 8734208622850327845}
+  player: {fileID: 0}
+  location: {x: 0, y: 0}
+  lucyLocation: {x: 0, y: 0}
+  distance: {x: 0, y: 0}
   playerDetectors:
   - {fileID: 8734208621400167943}
   - {fileID: 8734208621157564593}

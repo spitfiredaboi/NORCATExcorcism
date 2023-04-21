@@ -16,6 +16,11 @@ public class redEnemy : MonoBehaviour
 
     public Animator animator;
     public float detectorRange;
+    public Rigidbody2D rb;
+    public GameObject player;
+    public Vector2 location;
+    public Vector2 lucyLocation;
+    public Vector2 distance;
 
     public Transform[] playerDetectors;
     public RaycastHit2D[] playerHits = new RaycastHit2D[8];
@@ -25,15 +30,56 @@ public class redEnemy : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Lucy");
     }
 
     // Update is called once per frame
     void Update()
     {
+        lucyLocation = new Vector2(player.transform.position.x, player.transform.position.y);
+        location = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
         if (health <= 0 && !dead)
         {
             StartCoroutine(Death());
+        }
+
+        distance = lucyLocation - location;
+  
+        if (Mathf.Abs(distance.x) > Mathf.Abs(distance.y))
+        {
+            if (distance.x > 0)
+            {
+                right = true;
+                left = false;
+                down = false;
+                up = false;
+            }
+            else if (distance.x < 0)
+            {
+                right = false;
+                left = true;
+                down = false;
+                up = false;
+            }
+        }
+        else if (Mathf.Abs(distance.y) > Mathf.Abs(distance.x))
+                {
+            if(distance.y > 0)
+            {
+                right = false;
+                    left = false;
+                    down = false;
+                up = true;
+            }
+            else if (distance.y < 0)
+            {
+                right = false;
+                left = false;
+                down = true;
+                up = false;
+            }
         }
 
         animator.SetBool("down", down);
@@ -52,86 +98,44 @@ public class redEnemy : MonoBehaviour
         playerHits[6] = Physics2D.Raycast(playerDetectors[6].position, (Vector2.down + Vector2.right), detectorRange);
         playerHits[7] = Physics2D.Raycast(playerDetectors[7].position, (Vector2.down + Vector2.left), detectorRange);
 
-
         foreach (RaycastHit2D ray in playerHits)
         {
-            if (ray.collider != null)
+            if (ray.collider != null && !dead)
             {
                 if (ray.collider.gameObject.CompareTag("Lucy"))
                 {
-                    Debug.Log("Gottem");
 
                     if (ray.Equals(playerHits[0]))
                     {
-                        Debug.Log("Go Right");
                         transform.Translate(Vector2.right * Time.deltaTime * speed);
-                        right = true;
-                        left = false;
-                        up = false;
-                        down = false;
                     }
                     else if (ray.Equals(playerHits[1]))
                     {
-                        Debug.Log("Go Left");
                         transform.Translate(Vector2.left * Time.deltaTime * speed);
-                        right = false;
-                        left = true;
-                        up = false;
-                        down = false;
                     }
                     else if (ray.Equals(playerHits[2]))
                     {
-                        Debug.Log("Go Up");
                         transform.Translate(Vector2.up * Time.deltaTime * speed);
-                        right = false;
-                        left = false;
-                        up = true;
-                        down = false;
                     }
                     else if (ray.Equals(playerHits[3]))
                     {
-                        Debug.Log("Go Down");
                         transform.Translate(Vector2.down * Time.deltaTime * speed);
-                        right = false;
-                        left = false;
-                        up = false;
-                        down = true;
                     }
                     else if (ray.Equals(playerHits[4]))
                     {
-                        Debug.Log("Go northeast");
                         transform.Translate((Vector2.up + Vector2.right).normalized * Time.deltaTime * speed);
-                        right = true;
-                        left = false;
-                        up = false;
-                        down = false;
                     }
                     else if (ray.Equals(playerHits[5]))
                     {
-                        Debug.Log("Go northwest");
                         transform.Translate((Vector2.up + Vector2.left).normalized * Time.deltaTime * speed);
-                        right = false;
-                        left = true;
-                        up = false;
-                        down = false;
                     }
                     else if (ray.Equals(playerHits[6]))
                     {
-                        Debug.Log("Go southeast");
                         transform.Translate((Vector2.down + Vector2.right).normalized * Time.deltaTime * speed);
-                        right = true;
-                        left = false;
-                        up = false;
-                        down = false;
                     }
                     else if (ray.Equals(playerHits[7]))
                     {
-                        Debug.Log("Go southwest");
                         transform.Translate((Vector2.down + Vector2.left).normalized * Time.deltaTime * speed);
-                        right = false;
-                        left = true;
-                        up = false;
-                        down = false;
                     }
                 }
             }
@@ -140,8 +144,17 @@ public class redEnemy : MonoBehaviour
 
     IEnumerator Death()
     {
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         dead = true;
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("LucyWeapon"))
+        {
+            health--;
+        }
     }
 }
