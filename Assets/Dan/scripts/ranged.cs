@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ranged : MonoBehaviour
 {
-
+    public Transform player;
     public float speed;
 
     // Start is called before the first frame update
@@ -12,6 +12,16 @@ public class ranged : MonoBehaviour
     {
         StartCoroutine(SelfDestroy());
         gameObject.transform.parent = null;
+
+        if (gameObject.CompareTag("GavinEnemy"))
+            {
+            player = GameObject.Find("Gavin").transform;
+            transform.right = player.position - transform.position;
+        }
+    
+        
+        //Quaternion.RotateTowards(transform.rotation,)
+
     }
 
     // Update is called once per frame

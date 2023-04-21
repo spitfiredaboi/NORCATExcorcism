@@ -24,6 +24,7 @@ public class blueEnemy : MonoBehaviour
 
     public Transform[] playerDetectors;
     public RaycastHit2D[] playerHits = new RaycastHit2D[8];
+    public Quaternion aim;
 
 
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class blueEnemy : MonoBehaviour
     {
         gavinLocation = new Vector2(player.transform.position.x, player.transform.position.y);
         location = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        //aim = Quaternion.LookRotation(distance);
 
         if ((health <= 0 && !dead) || player == null)
         {
@@ -162,6 +164,7 @@ public class blueEnemy : MonoBehaviour
 
     private void Attack()
     {
-        Instantiate(weapon, gameObject.transform.position, gameObject.transform.rotation);
+        Instantiate(weapon, gameObject.transform.position, aim);
+      
     }    
 }
