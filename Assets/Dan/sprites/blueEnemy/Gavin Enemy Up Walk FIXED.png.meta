@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 341dc733ec0dae949bdfd92b9e1c2f73
+guid: 701dabcc6e1bed041aed1e9aa8ed8903
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 325
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gavin Enemy Right_0
+      name: Gavin Enemy Up Walk FIXED_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 448
-        width: 441
-        height: 448
+        y: 2560
+        width: 2560
+        height: 2560
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 203584573ced20847ac16bbd3623e2e8
-      internalID: 940343001
+      spriteID: dd9621f60ec04dc4b8157ca4555c59d8
+      internalID: 427746659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gavin Enemy Right_1
+      name: Gavin Enemy Up Walk FIXED_1
       rect:
         serializedVersion: 2
-        x: 441
-        y: 448
-        width: 441
-        height: 448
+        x: 2560
+        y: 2560
+        width: 2560
+        height: 2560
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e26686895931aa24f84aa5bcb24af930
-      internalID: 959536099
+      spriteID: 6b2dd2ad6d549fc4cba16b33bf65420f
+      internalID: 1917591327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gavin Enemy Right_2
+      name: Gavin Enemy Up Walk FIXED_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 441
-        height: 448
+        width: 2560
+        height: 2560
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b73d3872b4c67a44b8b90f7e43881212
-      internalID: 2043793047
+      spriteID: 30496eaa38154694daee2a024bf506cc
+      internalID: 751090193
       vertices: []
       indices: 
       edges: []
@@ -201,9 +201,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gavin Enemy Right_1: 959536099
-      Gavin Enemy Right_2: 2043793047
-      Gavin Enemy Right_0: 940343001
+      Gavin Enemy Up Walk FIXED_1: 1917591327
+      Gavin Enemy Up Walk FIXED_0: 427746659
+      Gavin Enemy Up Walk FIXED_2: 751090193
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

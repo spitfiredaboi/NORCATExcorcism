@@ -20,6 +20,7 @@ public class blueEnemy : MonoBehaviour
     public Vector2 location;
     public Vector2 gavinLocation;
     public Vector2 distance;
+    public GameObject weapon;
 
     public Transform[] playerDetectors;
     public RaycastHit2D[] playerHits = new RaycastHit2D[8];
@@ -31,6 +32,8 @@ public class blueEnemy : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Gavin");
+        InvokeRepeating("Attack", 3, 3);
+
     }
 
     // Update is called once per frame
@@ -145,7 +148,7 @@ public class blueEnemy : MonoBehaviour
     {
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         dead = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 
@@ -156,4 +159,9 @@ public class blueEnemy : MonoBehaviour
             health--;
         }
     }
+
+    private void Attack()
+    {
+        Instantiate(weapon, gameObject.transform.position, gameObject.transform.rotation);
+    }    
 }
