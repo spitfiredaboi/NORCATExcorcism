@@ -15,7 +15,7 @@ public class DialogueUi : MonoBehaviour
         typewriterEffect = GetComponent<TypeWriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
-        ShowDialogue(testDialogue);
+        //ShowDialogue(testDialogue);
     }
     public void ShowDialogue(DialogueObject dialogueObject)
     {
@@ -44,5 +44,10 @@ public class DialogueUi : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+    }
+
+    public void ActivateDialogue()
+    {
+        ShowDialogue(testDialogue);
     }
 }

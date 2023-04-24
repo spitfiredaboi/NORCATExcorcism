@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 695b94e241d0bfe4fa6a5ac9b208d157, type: 3}
-  m_Name: Yes
+  m_Name: Level2Intro
   m_EditorClassIdentifier: 
   dialogue: []
+  responses: []
+  HasResponses: 0
