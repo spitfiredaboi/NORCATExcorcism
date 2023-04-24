@@ -334,7 +334,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -487815354, guid: 5d2303d06111f644395ec130aee8e1ad, type: 3}
-  m_Color: {r: 1, g: 0.38812608, b: 0.3820755, a: 1}
+  m_Color: {r: 1, g: 0.3915094, b: 0.3915094, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -370,6 +370,7 @@ MonoBehaviour:
   location: {x: 0, y: 0}
   gavinLocation: {x: 0, y: 0}
   distance: {x: 0, y: 0}
+  weapon: {fileID: 7302284077753127198, guid: 9af92015364ba81468045e4c0e2ae28f, type: 3}
   playerDetectors:
   - {fileID: 2070975422}
   - {fileID: 630663269}
@@ -379,6 +380,7 @@ MonoBehaviour:
   - {fileID: 127972112}
   - {fileID: 1711117774}
   - {fileID: 1928087281}
+  aim: {x: 0, y: 0, z: 0, w: 0}
 --- !u!50 &6523905380618415126
 Rigidbody2D:
   serializedVersion: 4

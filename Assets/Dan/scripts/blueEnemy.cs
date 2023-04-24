@@ -44,7 +44,7 @@ public class blueEnemy : MonoBehaviour
         location = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
         //aim = Quaternion.LookRotation(distance);
 
-        if ((health <= 0 && !dead) || player == null)
+        if ((health <= 0 && !dead) || !player.activeInHierarchy)
         {
             StartCoroutine(Death());
         }

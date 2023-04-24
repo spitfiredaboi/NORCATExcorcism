@@ -24,7 +24,8 @@ public class redEnemy : MonoBehaviour
 
     public Transform[] playerDetectors;
     public RaycastHit2D[] playerHits = new RaycastHit2D[8];
-
+    public Quaternion aim;
+    public GameObject weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class redEnemy : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Lucy");
+        InvokeRepeating("Attack", 3, 3);
     }
 
     // Update is called once per frame
@@ -155,6 +157,13 @@ public class redEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("LucyWeapon"))
         {
             health--;
+        }
+    }
+    private void Attack()
+    {
+        if (!dead)
+        {
+            Instantiate(weapon, gameObject.transform.position, aim);
         }
     }
 }

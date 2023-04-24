@@ -18,8 +18,13 @@ public class ranged : MonoBehaviour
             player = GameObject.Find("Gavin").transform;
             transform.right = player.position - transform.position;
         }
-    
-        
+        if (gameObject.CompareTag("LucyEnemy"))
+        {
+            player = GameObject.Find("Lucy").transform;
+            transform.right = player.position - transform.position;
+        }
+
+
         //Quaternion.RotateTowards(transform.rotation,)
 
     }

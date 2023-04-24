@@ -173,7 +173,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: e14c727399ce01045a4b6acbd8fc7ea8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -292,9 +292,14 @@ MonoBehaviour:
   up: 0
   left: 0
   right: 0
+  dead: 0
   cam: {fileID: 0}
   leftCamFix: {fileID: 0}
   rightCamFix: {fileID: 0}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!50 &1363959154
 Rigidbody2D:
   serializedVersion: 4

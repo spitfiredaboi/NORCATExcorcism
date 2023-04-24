@@ -572,10 +572,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1444072154, guid: fceff32d16f05df48b73c3e450be4a61, type: 3}
-      propertyPath: hearts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444072154, guid: fceff32d16f05df48b73c3e450be4a61, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
       objectReference: {fileID: 972176548}
@@ -587,14 +583,6 @@ PrefabInstance:
       propertyPath: hearts.Array.data[2]
       value: 
       objectReference: {fileID: 1927533153}
-    - target: {fileID: 1444072154, guid: fceff32d16f05df48b73c3e450be4a61, type: 3}
-      propertyPath: hearts.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444072154, guid: fceff32d16f05df48b73c3e450be4a61, type: 3}
-      propertyPath: hearts.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7649149509659759809, guid: fceff32d16f05df48b73c3e450be4a61, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -638,10 +626,6 @@ PrefabInstance:
     - target: {fileID: 7649149509659759809, guid: fceff32d16f05df48b73c3e450be4a61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7649149509659759810, guid: fceff32d16f05df48b73c3e450be4a61, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7649149509659759812, guid: fceff32d16f05df48b73c3e450be4a61, type: 3}
       propertyPath: m_Name
@@ -789,18 +773,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6523905380618415121, guid: 85f86de05f1719746b8b24e1541f0408, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3915094
-      objectReference: {fileID: 0}
-    - target: {fileID: 6523905380618415121, guid: 85f86de05f1719746b8b24e1541f0408, type: 3}
-      propertyPath: m_Color.g
-      value: 0.3915094
-      objectReference: {fileID: 0}
-    - target: {fileID: 6523905380618415121, guid: 85f86de05f1719746b8b24e1541f0408, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6523905380618415122, guid: 85f86de05f1719746b8b24e1541f0408, type: 3}
       propertyPath: m_Name
       value: blueEnemy
@@ -809,10 +781,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1585373910}
-    - target: {fileID: 6523905380618415125, guid: 85f86de05f1719746b8b24e1541f0408, type: 3}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 7302284077753127198, guid: 9af92015364ba81468045e4c0e2ae28f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85f86de05f1719746b8b24e1541f0408, type: 3}
 --- !u!1 &1927533153

@@ -69,9 +69,12 @@ public class Player2 : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("Attack");
-        isAttacking = context.action.triggered;
-        StartCoroutine(Attacking());
+        if (!dead)
+        {
+            Debug.Log("Attack");
+            isAttacking = context.action.triggered;
+            StartCoroutine(Attacking());
+        }
     }
 
     // Update is called once per frame
@@ -79,7 +82,10 @@ public class Player2 : MonoBehaviour
     {
             //movement
             Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (!dead)
+        {
             gameObject.transform.Translate(movementInput * Time.deltaTime * speed);
+        }
 
 
             if (Input.GetKeyDown(KeyCode.Z) && isAttacking == false)
@@ -192,7 +198,7 @@ public class Player2 : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("LucyEnemy") && !iFrames)
+        if (collision.gameObject.CompareTag("GavinEnemy") && !iFrames)
         {
             health--;
             StartCoroutine(InvincibilityFrames());
