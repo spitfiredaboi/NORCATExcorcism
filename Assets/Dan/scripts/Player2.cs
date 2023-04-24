@@ -53,6 +53,11 @@ public class Player2 : MonoBehaviour
 
         //weapon
         weaponSlot = GameObject.Find("weaponSlot");
+
+        //hearts
+        hearts[0] = GameObject.Find("GavinHeart0");
+        hearts[1] = GameObject.Find("GavinHeart1");
+        hearts[2] = GameObject.Find("GavinHeart2");
     }
 
 
