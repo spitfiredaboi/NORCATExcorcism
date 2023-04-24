@@ -40,7 +40,7 @@ public class redEnemy : MonoBehaviour
         lucyLocation = new Vector2(player.transform.position.x, player.transform.position.y);
         location = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
-        if ((health <= 0 && !dead) || player == null)
+        if ((health <= 0 && !dead) || !player.activeInHierarchy)
         {
             StartCoroutine(Death());
         }
@@ -146,7 +146,7 @@ public class redEnemy : MonoBehaviour
     {
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         dead = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 

@@ -25,12 +25,14 @@ public class Player : MonoBehaviour
     //components
     public Animator animator;
     public Rigidbody2D rb;
+    public GameObject[] hearts;
 
     //animation
     public bool down;
     public bool up;
     public bool left;
     public bool right;
+    public bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +55,7 @@ public class Player : MonoBehaviour
     
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (!AttackDelay)
+        if (!AttackDelay && !dead)
         {
             Debug.Log("Attack");
             StartCoroutine(Attacking());
@@ -65,8 +67,32 @@ public class Player : MonoBehaviour
     {
         //movement
         Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        gameObject.transform.Translate(movementInput * Time.deltaTime * speed);
-        
+        if (!dead)
+        {
+            gameObject.transform.Translate(movementInput * Time.deltaTime * speed);
+        }
+
+        if (health < 5)
+        {
+            Destroy(hearts[4]);
+            if (health < 4)
+            {
+                Destroy(hearts[3]);
+                if(health < 3)
+                {
+                    Destroy(hearts[2]);
+                    if(health < 2)
+                    {
+                        Destroy(hearts[1]);
+                    }
+                    if(health < 1)
+                    {
+                        Destroy(hearts[0]);
+                        StartCoroutine(Death());
+                    }
+                }
+            }
+        }
 
         //movement detection
         //detect horizontal movement
@@ -124,6 +150,7 @@ public class Player : MonoBehaviour
         animator.SetBool("isWalkingRight", right);
         animator.SetBool("isWalkingUp", up);
         animator.SetBool("isAttacking", isAttacking);
+        animator.SetBool("dead", dead);
 
         //attack in the right direction
         if (meleeSlot != null)
@@ -173,5 +200,12 @@ public class Player : MonoBehaviour
         iFrames = true;
         yield return new WaitForSeconds(1.5f);
         iFrames = false;
+    }
+
+    IEnumerator Death()
+    {
+        dead = true;
+        yield return new WaitForSeconds(1.5f);
+        gameObject.SetActive(false);
     }
 }

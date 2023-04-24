@@ -28,11 +28,13 @@ public class Player2 : MonoBehaviour
     public bool up;
     public bool left;
     public bool right;
+    public bool dead;
 
     //cam fix
     public CinemachineTargetGroup cam;
     public GameObject leftCamFix;
     public GameObject rightCamFix;
+    public GameObject[] hearts;
 
     // Start is called before the first frame update
     void Start()
@@ -80,9 +82,23 @@ public class Player2 : MonoBehaviour
                 StartCoroutine(Attacking());
             }
 
-            //movement detection
-            //detect horizontal movement
-            if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
+
+        if (health < 3)
+        {
+            Destroy(hearts[2]);
+            if (health < 2)
+            {
+                Destroy(hearts[1]);
+            }
+            if (health < 1)
+            {
+                Destroy(hearts[0]);
+                StartCoroutine(Death());
+            }
+        }
+        //movement detection
+        //detect horizontal movement
+        if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
             {
                 //detect if moving right
                 if (movementInput.x > 0)
@@ -135,6 +151,7 @@ public class Player2 : MonoBehaviour
             animator.SetBool("isWalkingLeft", left);
             animator.SetBool("isWalkingRight", right);
             animator.SetBool("isWalkingUp", up);
+            animator.SetBool("dead", dead);
         //attack in the right direction
             if (weaponSlot != null)
             {
@@ -159,7 +176,7 @@ public class Player2 : MonoBehaviour
 
     IEnumerator Attacking()
     {
-        if (isAttacking && !AttackDelay)
+        if (isAttacking && !AttackDelay) 
         {
             AttackDelay = true;
             Instantiate(weapon, weaponSlot.transform);
@@ -175,6 +192,13 @@ public class Player2 : MonoBehaviour
             health--;
             StartCoroutine(InvincibilityFrames());
         }
+    }
+
+    IEnumerator Death()
+    {
+        dead = true;
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
     }
 
     IEnumerator InvincibilityFrames()

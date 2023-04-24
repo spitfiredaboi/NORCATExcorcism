@@ -148,10 +148,10 @@ public class blueEnemy : MonoBehaviour
 
     IEnumerator Death()
     {
-        gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-        dead = true;
-        yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            dead = true;
+            yield return new WaitForSeconds(2f);
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -164,7 +164,9 @@ public class blueEnemy : MonoBehaviour
 
     private void Attack()
     {
-        Instantiate(weapon, gameObject.transform.position, aim);
-      
+        if (!dead)
+        {
+            Instantiate(weapon, gameObject.transform.position, aim);
+        }
     }    
 }
