@@ -40,4 +40,12 @@ public class ranged : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Lucy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
