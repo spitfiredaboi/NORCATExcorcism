@@ -9,15 +9,15 @@ public class Player2 : MonoBehaviour
     public float speed = 5;
     private Vector2 playerVelocity;
     private Vector2 movementInput = Vector2.zero;
-
-    //controller
-    private CharacterController controller;
+    private float health = 3;
+    public bool iFrames = false;
 
     //weapon variables
-    public GameObject melee;
-    public GameObject meleeSlot;
-    public float meleeSpeed;
+    public GameObject weaponSlot;
+    public GameObject weapon;
+    public float weaponSpeed = 2;
     public bool isAttacking = false;
+    public bool AttackDelay = false;
 
     //components
     public Animator animator;
@@ -28,11 +28,13 @@ public class Player2 : MonoBehaviour
     public bool up;
     public bool left;
     public bool right;
+    public bool dead;
 
     //cam fix
     public CinemachineTargetGroup cam;
     public GameObject leftCamFix;
     public GameObject rightCamFix;
+    public GameObject[] hearts;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,6 @@ public class Player2 : MonoBehaviour
         //components
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        controller = gameObject.GetComponent<CharacterController>();
 
         cam = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
         leftCamFix = GameObject.Find("LeftLimit");
@@ -49,6 +50,14 @@ public class Player2 : MonoBehaviour
         cam.AddMember(gameObject.transform, 1f, 0f);
         cam.AddMember(leftCamFix.transform, 1f, 0f);
         cam.AddMember(rightCamFix.transform, 1f, 0f);
+
+        //weapon
+        weaponSlot = GameObject.Find("weaponSlot");
+
+        //hearts
+        hearts[0] = GameObject.Find("GavinHeart0");
+        hearts[1] = GameObject.Find("GavinHeart1");
+        hearts[2] = GameObject.Find("GavinHeart2");
     }
 
 
@@ -58,22 +67,49 @@ public class Player2 : MonoBehaviour
         Debug.Log(movementInput);
     }
 
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (!dead)
+        {
+            Debug.Log("Attack");
+            isAttacking = context.action.triggered;
+            StartCoroutine(Attacking());
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
             //movement
             Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            controller.Move(movementInput * Time.deltaTime * speed);
+        if (!dead)
+        {
+            gameObject.transform.Translate(movementInput * Time.deltaTime * speed);
+        }
 
 
             if (Input.GetKeyDown(KeyCode.Z) && isAttacking == false)
             {
-                StartCoroutine(Attack());
+                StartCoroutine(Attacking());
             }
 
-            //movement detection
-            //detect horizontal movement
-            if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
+
+        if (health < 3)
+        {
+            Destroy(hearts[2]);
+            if (health < 2)
+            {
+                Destroy(hearts[1]);
+            }
+            if (health < 1)
+            {
+                Destroy(hearts[0]);
+                StartCoroutine(Death());
+            }
+        }
+        //movement detection
+        //detect horizontal movement
+        if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
             {
                 //detect if moving right
                 if (movementInput.x > 0)
@@ -126,35 +162,60 @@ public class Player2 : MonoBehaviour
             animator.SetBool("isWalkingLeft", left);
             animator.SetBool("isWalkingRight", right);
             animator.SetBool("isWalkingUp", up);
+            animator.SetBool("dead", dead);
         //attack in the right direction
-            if (meleeSlot != null)
+            if (weaponSlot != null)
             {
                 if ((movementInput.y == 0 && movementInput.x == 0) || down)
                 {
-                    meleeSlot.transform.eulerAngles = new Vector3(0, 0, 270);
+                    weaponSlot.transform.eulerAngles = new Vector3(0, 0, 270);
                 }
                 else if (right)
                 {
-                    meleeSlot.transform.eulerAngles = new Vector3(0, 0, 0);
+                    weaponSlot.transform.eulerAngles = new Vector3(0, 0, 0);
                 }
                 else if (up)
                 {
-                    meleeSlot.transform.eulerAngles = new Vector3(0, 0, 90);
+                    weaponSlot.transform.eulerAngles = new Vector3(0, 0, 90);
                 }
                 else if (left)
                 {
-                    meleeSlot.transform.eulerAngles = new Vector3(0, 0, 180);
+                    weaponSlot.transform.eulerAngles = new Vector3(0, 0, 180);
                 }
             }
         }
 
-        IEnumerator Attack()
+    IEnumerator Attacking()
+    {
+        if (isAttacking && !AttackDelay) 
         {
-            isAttacking = true;
-            melee.SetActive(true);
-            yield return new WaitForSeconds(meleeSpeed);
-            melee.SetActive(false);
-            Debug.Log("It's workin");
-            isAttacking = false;
+            AttackDelay = true;
+            Instantiate(weapon, weaponSlot.transform);
+            yield return new WaitForSeconds(weaponSpeed);
+            AttackDelay = false;
+        }
+        yield return new WaitForSeconds(0);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("GavinEnemy") && !iFrames)
+        {
+            health--;
+            StartCoroutine(InvincibilityFrames());
         }
     }
+
+    IEnumerator Death()
+    {
+        dead = true;
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+    }
+
+    IEnumerator InvincibilityFrames()
+    {
+        iFrames = true;
+        yield return new WaitForSeconds(1.5f);
+        iFrames = false;
+    }
+}

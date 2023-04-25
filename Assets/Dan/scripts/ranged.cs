@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class ranged : MonoBehaviour
 {
-
+    public Transform player;
     public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SelfDestroy());
+        gameObject.transform.parent = null;
+
+        if (gameObject.CompareTag("GavinEnemy"))
+            {
+            player = GameObject.Find("Gavin").transform;
+            transform.right = player.position - transform.position;
+        }
+        if (gameObject.CompareTag("LucyEnemy"))
+        {
+            player = GameObject.Find("Lucy").transform;
+            transform.right = player.position - transform.position;
+        }
+
+
+        //Quaternion.RotateTowards(transform.rotation,)
+
     }
 
     // Update is called once per frame
@@ -21,7 +37,15 @@ public class ranged : MonoBehaviour
 
     public IEnumerator SelfDestroy()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Lucy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

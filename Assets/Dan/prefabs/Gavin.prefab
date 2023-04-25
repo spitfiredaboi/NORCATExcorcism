@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7649149509499384320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.97, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,9 +104,10 @@ GameObject:
   - component: {fileID: 7649149509659759809}
   - component: {fileID: 7649149509659759810}
   - component: {fileID: -1871489987554039058}
-  - component: {fileID: 7884269114429807778}
   - component: {fileID: 1444072153}
   - component: {fileID: 1444072154}
+  - component: {fileID: 1363959154}
+  - component: {fileID: 1363959153}
   m_Layer: 0
   m_Name: Gavin
   m_TagString: Gavin
@@ -172,7 +173,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: e14c727399ce01045a4b6acbd8fc7ea8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -204,24 +205,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &7884269114429807778
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7649149509659759812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 3.8
-  m_Radius: 1
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: -0.05, y: 0.4, z: 0}
 --- !u!114 &1444072153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +247,19 @@ MonoBehaviour:
     m_ActionId: 86eed424-5380-4505-8c81-d1aa107bc4f4
     m_ActionName: Player/Movement[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1444072154}
+        m_TargetAssemblyTypeName: Player2, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 61db65ca-b1d4-4543-bd72-329fa508cb5b
     m_ActionName: Player/Jump
   m_NeverAutoSwitchControlSchemes: 1
@@ -285,16 +280,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  melee: {fileID: 0}
-  meleeSlot: {fileID: 0}
-  meleeSpeed: 0
+  iFrames: 0
+  weaponSlot: {fileID: 7649149509499384320}
+  weapon: {fileID: 4330329926229784161, guid: 60634f6f87bfca0458c7b686ee925cac, type: 3}
+  weaponSpeed: 1
   isAttacking: 0
+  AttackDelay: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
   down: 0
   up: 0
   left: 0
   right: 0
+  dead: 0
   cam: {fileID: 0}
   leftCamFix: {fileID: 0}
   rightCamFix: {fileID: 0}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!50 &1363959154
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649149509659759812}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &1363959153
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649149509659759812}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04958868, y: 0.42150354}
+  m_Size: {x: 1.9524336, y: 3.5888586}
+  m_Direction: 0
