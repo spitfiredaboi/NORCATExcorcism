@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Rais/2.unity.meta
 guid: 9ebb87b984e2ae64ba48572e1e2f83cc
+========
+guid: df4d346d3d2c6d748873736cc9e0d9ed
+>>>>>>>> origin/kyle4.17.2023:Assets/Kyle/scene/Lucy (1).prefab.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
