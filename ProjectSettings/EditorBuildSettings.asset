@@ -4,9 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-
   m_Scenes:
-
   - enabled: 0
     path: Assets/Main/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
@@ -16,16 +14,25 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Dan/scenes/LVL1.unity
     guid: cf38e9c1ca4a42549b36ca9a13dbc740
-
+  - enabled: 1
+    path: Assets/Carlos/LevelAssembly/LV1.unity
+    guid: 9cadccaaee558e944b48f813b57c5fe2
+  - enabled: 1
+    path: Assets/Carlos/LevelAssembly/lV3.unity
+    guid: 6b7d6e0c3fac99c49a7f2e66f1723ec1
+  - enabled: 1
+    path: Assets/Carlos/LevelAssembly/LV4.unity
+    guid: cc920c4b1f0bfb04fa581a6fe609e749
+  - enabled: 1
+    path: Assets/Carlos/LevelAssembly/Lv1 Tut.unity
+    guid: cf0028f9bd6b2e5419003244c5c59b98
   - enabled: 1
     path: Assets/Carlos/script/Title.unity
     guid: 7137fc68583b475458606935225df78e
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Carlos/script/Gameover.unity
+    guid: edbf9b2047397514facb08b8d29b324e
   - enabled: 1
     path: Assets/Carlos/script/settings.unity
     guid: fe06da155626b5d41978de1f9c8eebfb
-
   m_configObjects: {}
-
