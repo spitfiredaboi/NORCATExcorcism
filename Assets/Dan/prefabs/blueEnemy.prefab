@@ -31,6 +31,37 @@ Transform:
   m_Father: {fileID: 6523905380618415120}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &513891875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 513891876}
+  m_Layer: 0
+  m_Name: weaponSlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &513891876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513891875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6523905380618415120}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630663268
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +320,7 @@ Transform:
   - {fileID: 127972112}
   - {fileID: 1711117774}
   - {fileID: 1928087281}
+  - {fileID: 513891876}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -371,6 +403,7 @@ MonoBehaviour:
   gavinLocation: {x: 0, y: 0}
   distance: {x: 0, y: 0}
   weapon: {fileID: 7302284077753127198, guid: 9af92015364ba81468045e4c0e2ae28f, type: 3}
+  weaponSlot: {fileID: 513891875}
   playerDetectors:
   - {fileID: 2070975422}
   - {fileID: 630663269}
@@ -380,7 +413,6 @@ MonoBehaviour:
   - {fileID: 127972112}
   - {fileID: 1711117774}
   - {fileID: 1928087281}
-  aim: {x: 0, y: 0, z: 0, w: 0}
 --- !u!50 &6523905380618415126
 Rigidbody2D:
   serializedVersion: 4

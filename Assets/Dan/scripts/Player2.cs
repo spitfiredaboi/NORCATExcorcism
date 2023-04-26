@@ -80,8 +80,9 @@ public class Player2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            //movement
-            Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        rb.velocity = new Vector3(0, 0, 0);
+        //movement
+        Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (!dead)
         {
             gameObject.transform.Translate(movementInput * Time.deltaTime * speed);

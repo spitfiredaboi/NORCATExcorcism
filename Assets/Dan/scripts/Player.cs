@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 using UnityEngine.InputSystem;
 
 
@@ -45,6 +46,11 @@ public class Player : MonoBehaviour
         //components
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        hearts[0] = GameObject.Find("LucyHeart0");
+        hearts[1] = GameObject.Find("LucyHeart1");
+        hearts[2] = GameObject.Find("LucyHeart2");
+        hearts[3] = GameObject.Find("LucyHeart3");
+        hearts[4] = GameObject.Find("LucyHeart4");
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -65,6 +71,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb.velocity = new Vector3(0, 0, 0);
         //movement
         Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (!dead)

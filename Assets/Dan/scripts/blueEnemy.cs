@@ -21,10 +21,10 @@ public class blueEnemy : MonoBehaviour
     public Vector2 gavinLocation;
     public Vector2 distance;
     public GameObject weapon;
+    public GameObject weaponSlot;
 
     public Transform[] playerDetectors;
     public RaycastHit2D[] playerHits = new RaycastHit2D[8];
-    public Quaternion aim;
 
 
     // Start is called before the first frame update
@@ -42,6 +42,7 @@ public class blueEnemy : MonoBehaviour
     {
         gavinLocation = new Vector2(player.transform.position.x, player.transform.position.y);
         location = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        rb.velocity = new Vector3(0, 0, 0);
         //aim = Quaternion.LookRotation(distance);
 
         if ((health <= 0 && !dead) || !player.activeInHierarchy)
@@ -144,6 +145,25 @@ public class blueEnemy : MonoBehaviour
                 }
             }
         }
+        if (weaponSlot != null)
+        {
+            if (down)
+            {
+                weaponSlot.transform.eulerAngles = new Vector3(0, 0, 270);
+            }
+            else if (right)
+            {
+                weaponSlot.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (up)
+            {
+                weaponSlot.transform.eulerAngles = new Vector3(0, 0, 90);
+            }
+            else if (left)
+            {
+                weaponSlot.transform.eulerAngles = new Vector3(0, 0, 180);
+            }
+        }
     }
 
     IEnumerator Death()
@@ -166,7 +186,7 @@ public class blueEnemy : MonoBehaviour
     {
         if (!dead)
         {
-            Instantiate(weapon, gameObject.transform.position, aim);
+            Instantiate(weapon, gameObject.transform.position, Quaternion.identity);
         }
     }    
 }

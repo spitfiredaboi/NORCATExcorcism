@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ranged : MonoBehaviour
 {
-    public Transform player;
+    public GameObject player;
     public float speed;
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -15,13 +17,20 @@ public class ranged : MonoBehaviour
 
         if (gameObject.CompareTag("GavinEnemy"))
             {
-            player = GameObject.Find("Gavin").transform;
-            transform.right = player.position - transform.position;
+            player = GameObject.Find("Gavin");
         }
         if (gameObject.CompareTag("LucyEnemy"))
         {
-            player = GameObject.Find("Lucy").transform;
-            transform.right = player.position - transform.position;
+            player = GameObject.Find("Lucy");  
+        }
+
+        if(player != null)
+        {
+            Vector3 direction = player.transform.position - transform.position;
+            float rotation = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, rotation);
+            rb = GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
         }
 
 
@@ -32,7 +41,10 @@ public class ranged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        if (gameObject.CompareTag("GavinWeapon"))
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
     }
 
     public IEnumerator SelfDestroy()
