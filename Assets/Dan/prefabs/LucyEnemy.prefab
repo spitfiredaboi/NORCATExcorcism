@@ -399,6 +399,8 @@ MonoBehaviour:
   - {fileID: 8734208621965588216}
   - {fileID: 8734208621892353633}
   - {fileID: 8734208622386831310}
+  aim: {x: 0, y: 0, z: 0, w: 0}
+  weapon: {fileID: 1591343488868831713, guid: 1c991cd494c68c34ca275910a9abfcae, type: 3}
 --- !u!70 &8734208622850327844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

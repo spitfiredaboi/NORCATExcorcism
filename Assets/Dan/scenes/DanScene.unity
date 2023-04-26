@@ -559,7 +559,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &791019343
 MonoBehaviour:
@@ -722,7 +722,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &947076025 stripped
 Transform:
@@ -881,67 +881,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117384454}
   m_CullTransparentMesh: 1
---- !u!1001 &1143581272
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8734208622850327851, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 1591343488868831713, guid: 1c991cd494c68c34ca275910a9abfcae, type: 3}
-    - target: {fileID: 8734208622850327852, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_Name
-      value: LucyEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.491
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.30641845
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734208622850327855, guid: 434cabfabf7624d4382f10746886954a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 434cabfabf7624d4382f10746886954a, type: 3}
 --- !u!1 &1221959268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,7 +1406,7 @@ RectTransform:
   - {fileID: 1020564464}
   - {fileID: 2130987432}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
