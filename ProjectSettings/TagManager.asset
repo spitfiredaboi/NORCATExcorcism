@@ -7,7 +7,11 @@ TagManager:
   - Lucy
   - Gavin
   - Door
-
+  - light
+  - LucyWeapon
+  - LucyEnemy
+  - GavinEnemy
+  - GavinWeapon
   layers:
   - Default
   - TransparentFX
