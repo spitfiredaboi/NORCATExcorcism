@@ -20,6 +20,6 @@ public class title : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SettingsValues.SetVolume();
     }
 }

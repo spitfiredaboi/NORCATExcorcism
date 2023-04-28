@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Carlos/script/Title.unity
+    guid: 7137fc68583b475458606935225df78e
+  - enabled: 1
+    path: Assets/Carlos/script/settings.unity
+    guid: fe06da155626b5d41978de1f9c8eebfb
+  - enabled: 1
     path: Assets/Dan/scenes/LucyTutorial.unity
     guid: c4bb20d496ee5a74f96ee08dc6bc6393
+  - enabled: 1
+    path: Assets/Carlos/script/Gameover.unity
+    guid: edbf9b2047397514facb08b8d29b324e
   m_configObjects: {}
