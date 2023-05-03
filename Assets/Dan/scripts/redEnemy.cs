@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class redEnemy : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class redEnemy : MonoBehaviour
     public GameObject weapon;
     public GameObject weaponSlot;
 
+    public string scene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,12 @@ public class redEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Lucy");
         InvokeRepeating("Attack", 3, 3);
+        scene = SceneManager.GetActiveScene().name;
+
+        if(scene == "Boss Fight")
+        {
+            detectorRange = 9999999999999;
+        }
     }
 
     // Update is called once per frame
@@ -166,6 +175,10 @@ public class redEnemy : MonoBehaviour
 
     IEnumerator Death()
     {
+        if(health <= 0)
+        {
+            Level4.score++;
+        }
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         dead = true;
         yield return new WaitForSeconds(2f);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class blueEnemy : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class blueEnemy : MonoBehaviour
     public Transform[] playerDetectors;
     public RaycastHit2D[] playerHits = new RaycastHit2D[8];
 
+    public string scene;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +37,12 @@ public class blueEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Gavin");
         InvokeRepeating("Attack", 3, 3);
+        scene = SceneManager.GetActiveScene().name;
 
+        if (scene == "Boss Fight")
+        {
+            detectorRange = 9999999999999;
+        }
     }
 
     // Update is called once per frame
@@ -168,6 +176,11 @@ public class blueEnemy : MonoBehaviour
 
     IEnumerator Death()
     {
+        if(health <= 0)
+        {
+            Level4.score++;
+            Debug.Log(Level4.score);
+        }
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             dead = true;
             yield return new WaitForSeconds(2f);

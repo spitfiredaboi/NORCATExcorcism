@@ -2971,6 +2971,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8744500393481139639, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744500393481139639, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744500393481139639, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e1f57d8ebad2714d873d15ab8c06599, type: 3}
+    - target: {fileID: 8744500393481139639, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a6900b3354719e4fbf3556df1de897d, type: 3}
 --- !u!4 &1969631821 stripped
@@ -5985,6 +6001,7 @@ GameObject:
   - component: {fileID: 4071359548270422146}
   - component: {fileID: 5466243357565262142}
   - component: {fileID: 7433636912327406344}
+  - component: {fileID: 8219099645633938875}
   m_Layer: 0
   m_Name: DoorEXIT (1)
   m_TagString: Untagged
@@ -6165,6 +6182,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4300360329926139376, guid: 71757de0c0785f34a978d96a9295426e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.8347034
+      objectReference: {fileID: 0}
     - target: {fileID: 4300360329926139377, guid: 71757de0c0785f34a978d96a9295426e, type: 3}
       propertyPath: m_Targets.Array.data[0].target
       value: 
@@ -6177,6 +6198,14 @@ PrefabInstance:
       propertyPath: m_Targets.Array.data[2].target
       value: 
       objectReference: {fileID: 1628486659}
+    - target: {fileID: 4300360330069991538, guid: 71757de0c0785f34a978d96a9295426e, type: 3}
+      propertyPath: orthographic size
+      value: 4.21875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300360330069991541, guid: 71757de0c0785f34a978d96a9295426e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.8347034
+      objectReference: {fileID: 0}
     - target: {fileID: 4300360330229625334, guid: 71757de0c0785f34a978d96a9295426e, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -6224,6 +6253,10 @@ PrefabInstance:
     - target: {fileID: 4300360330229625335, guid: 71757de0c0785f34a978d96a9295426e, type: 3}
       propertyPath: m_Name
       value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340500464687645170, guid: 71757de0c0785f34a978d96a9295426e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.8347034
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71757de0c0785f34a978d96a9295426e, type: 3}
@@ -6401,6 +6434,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8219099645633938875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150518603767652104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c2d4f2269b1d549976dc04d6f43965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 
 --- !u!1001 &8597737459339586499
 PrefabInstance:
   m_ObjectHideFlags: 0

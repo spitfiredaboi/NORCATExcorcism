@@ -12,6 +12,8 @@ TagManager:
   - LucyEnemy
   - GavinEnemy
   - GavinWeapon
+  - Boss
+  - gate
   layers:
   - Default
   - TransparentFX

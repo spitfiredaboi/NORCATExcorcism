@@ -195,10 +195,19 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("I");
-        if (collision.gameObject.CompareTag("LucyEnemy") && !iFrames)
+        if ((collision.gameObject.CompareTag("GavinEnemy") || collision.gameObject.CompareTag("Boss")) && !iFrames)
         {
             health--;
+            Destroy(collision.gameObject);
             StartCoroutine(InvincibilityFrames());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("gate"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 

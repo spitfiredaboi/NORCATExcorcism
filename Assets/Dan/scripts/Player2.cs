@@ -206,6 +206,19 @@ public class Player2 : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("gate"))
+        {
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            health--;
+            Destroy(collision.gameObject);
+        }
+    }
+
     IEnumerator Death()
     {
         dead = true;

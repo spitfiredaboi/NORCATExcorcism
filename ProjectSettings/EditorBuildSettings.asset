@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Dan/scenes/LucyTutorial.unity
     guid: c4bb20d496ee5a74f96ee08dc6bc6393
+  - enabled: 1
+    path: Assets/Dan/scenes/GavinTutorial.unity
+    guid: ba1ed8e7533f65046bc5fbce391c0c5d
+  - enabled: 1
+    path: Assets/Dan/scenes/BossFight.unity
+    guid: f79bd190bea62e84db604081b14c4ef4
   m_configObjects: {}
