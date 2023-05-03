@@ -17,7 +17,7 @@ MonoBehaviour:
   - This game is a story about an excorsist cursed with demonic power and a angel
     sent from heaven
   - Lucy the demonic priest has a tendancy towards voilence to solve issues, and
-    Gavejn the angel is just doing his best
+    Gaven the angel is just doing his best
   - thanks for the interest but thats all there is so far
   - ...
   - your still here?
@@ -28,3 +28,8 @@ MonoBehaviour:
   - 'Balls
 
 '
+  responses:
+  - responseText: You Said Yes
+    dialogueObject: {fileID: 11400000, guid: d9a75b467f63f304f94a82bca0293733, type: 2}
+  - responseText: You Said hell no
+    dialogueObject: {fileID: 11400000, guid: f83394f03e661844c87d5e8f8377396e, type: 2}
