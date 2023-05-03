@@ -22,6 +22,7 @@ public class Player2 : MonoBehaviour
     //components
     public Animator animator;
     public Rigidbody2D rb;
+    public DialogueUi dialogue;
 
     //animation
     public bool down;
@@ -29,6 +30,7 @@ public class Player2 : MonoBehaviour
     public bool left;
     public bool right;
     public bool dead;
+    public bool CanReadSign;
 
     //cam fix
     public CinemachineTargetGroup cam;
@@ -74,6 +76,16 @@ public class Player2 : MonoBehaviour
             Debug.Log("Attack");
             isAttacking = context.action.triggered;
             StartCoroutine(Attacking());
+        }
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (CanReadSign)
+        {
+            {
+                dialogue.ActivateDialogue();
+            }
         }
     }
 
@@ -212,12 +224,26 @@ public class Player2 : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Sign"))
         {
-            health--;
-            Destroy(collision.gameObject);
+            dialogue = collision.gameObject.GetComponent<ObjectLinker>().dialogueObject.GetComponent<DialogueUi>();
+            CanReadSign = true;
+
         }
     }
+
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Sign"))
+        {
+
+            CanReadSign = false;
+
+        }
+
+    }
+    
 
     IEnumerator Death()
     {

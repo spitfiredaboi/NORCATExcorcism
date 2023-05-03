@@ -14,6 +14,7 @@ TagManager:
   - GavinWeapon
   - Boss
   - gate
+  - Sign
   layers:
   - Default
   - TransparentFX

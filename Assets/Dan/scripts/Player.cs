@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private Vector2 movementInput = Vector2.zero;
     public int health = 5;
     public bool iFrames = false;
+    public bool CanReadSign;
 
     //controller
     private CharacterController controller;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public GameObject[] hearts;
+    public DialogueUi dialogue;
 
     //animation
     public bool down;
@@ -65,6 +67,16 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Attack");
             StartCoroutine(Attacking());
+        }
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (CanReadSign)
+        {
+            {
+                dialogue.ActivateDialogue();
+            }
         }
     }
 
@@ -209,9 +221,27 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-    }
+        if (collision.gameObject.CompareTag("Sign"))
+        {
+            dialogue = collision.gameObject.GetComponent<ObjectLinker>().dialogueObject.GetComponent<DialogueUi>();
+            CanReadSign = true;
 
-    IEnumerator InvincibilityFrames()
+        }
+    }
+        
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Sign"))
+            {
+
+                CanReadSign = false;
+
+            }
+
+        }
+
+        IEnumerator InvincibilityFrames()
     {
         iFrames = true;
         yield return new WaitForSeconds(1.5f);

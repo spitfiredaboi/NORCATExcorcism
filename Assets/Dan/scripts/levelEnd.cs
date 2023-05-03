@@ -27,7 +27,7 @@ public class levelEnd : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Gavin") && scene == "GavinTutorial")
         {
-            SceneManager.LoadScene("BossFight");
+            SceneManager.LoadScene("Level3");
         }
     }
 }

@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Dan/scenes/GavinTutorial.unity
     guid: ba1ed8e7533f65046bc5fbce391c0c5d
   - enabled: 1
+    path: Assets/Dan/scenes/Level3.unity
+    guid: d0af140af1467da43aa5d4f9feeaee9d
+  - enabled: 1
+    path: Assets/Dan/scenes/Level4.unity
+    guid: 7a39990877f003342be4e050ca4211df
+  - enabled: 1
     path: Assets/Dan/scenes/BossFight.unity
     guid: f79bd190bea62e84db604081b14c4ef4
   m_configObjects: {}

@@ -218,6 +218,7 @@ MonoBehaviour:
   speed: 5
   health: 5
   iFrames: 0
+  CanReadSign: 0
   melee: {fileID: 0}
   meleeSlot: {fileID: 0}
   meleeSpeed: 0.67
@@ -231,6 +232,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  dialogue: {fileID: 0}
   down: 0
   up: 0
   left: 0
@@ -313,6 +315,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 61db65ca-b1d4-4543-bd72-329fa508cb5b
     m_ActionName: Player/Jump
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6083959624432509652}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 94e9603c-5931-4ebd-b805-4ce8daa721a8
+    m_ActionName: Player/Interact[/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
@@ -426,14 +444,14 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8744500393481139641}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c096cbf1e2b067d4ba4105d6a6b74128, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1e1f57d8ebad2714d873d15ab8c06599, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

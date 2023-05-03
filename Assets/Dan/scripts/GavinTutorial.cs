@@ -33,7 +33,7 @@ public class GavinTutorial : MonoBehaviour
     {
         if (!player.activeInHierarchy)
         {
-            SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("GavinTutorial");
         }
     }
 }

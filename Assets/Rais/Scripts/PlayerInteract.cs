@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private DialogueUi dialogue;
-    private bool CanReadSign = false;
+    public bool CanReadSign = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,9 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && CanReadSign)
+        if (Input.GetButtonDown("Interact") && CanReadSign)
         {
+            Debug.Log("BUTTON!");
             dialogue.ActivateDialogue();
         }
 
@@ -26,7 +27,7 @@ public class PlayerInteract : MonoBehaviour
         {
         if(other.gameObject.CompareTag("Lucy")||other.gameObject.CompareTag("Gavin"))
         {
-            CanReadSign = true;
+            //other.gameObject.GetComponent<Player>()
 
         }
         }
