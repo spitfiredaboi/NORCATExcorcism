@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Dan/scenes/StartScreen.unity
+    guid: 4244ccb865426c0439fb964a25dc3f80
+  - enabled: 1
     path: Assets/Dan/scenes/LucyTutorial.unity
     guid: c4bb20d496ee5a74f96ee08dc6bc6393
   - enabled: 1
